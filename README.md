@@ -34,7 +34,7 @@ Things you may want to cover:
 | encrypted_password    | string | null: false               |
 | prefecture_id         | integer| null: false               |
 | birthday              | date   | null: false               |
-| self_info             | text   | null: false               |
+| self_info             | text   |                           |
 | favorite              | string |                           |
 
 ### Association
