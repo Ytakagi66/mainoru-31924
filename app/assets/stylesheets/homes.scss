@@ -1,0 +1,60 @@
+.slide {
+  width: 100vw;
+  height: 600px;
+  background-color: blue;
+}
+
+.contents {
+  background-color: saddlebrown;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.features {
+  width: 80vw;
+  height: 450px;
+  background-color: red;
+}
+
+.how_to {
+  width: 80vw;
+  height: 400px;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.left_content {
+  width: 300px;
+  height: 300px;
+  margin: 30px;
+  background-color: #ffff00;
+}
+
+.center_content {
+  width: 300px;
+  height: 300px;
+  margin: 30px;
+  background-color: #c0c0c0;
+}
+
+.right_content {
+  width: 300px;
+  height: 300px;
+  margin: 30px;
+  background-color: #00ff00;
+}
+
+.author {
+  width: 80vw;
+  height: 300px;
+  background-color: skyblue;
+}
+
+.footer_link {
+  width: 100vw;
+  height: 250px;
+  background-color: purple;
+}
