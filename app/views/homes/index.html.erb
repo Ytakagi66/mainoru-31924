@@ -1,8 +1,23 @@
-<div class = 'body'>
-
-<%# トップスライド %>
 <div class = 'slide'>
+  <!-- Slider main container -->
+  <div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide"><%= image_tag '白髭神社.jpg', class: 'slide_photo' %></div>
+      <div class="swiper-slide"><%= image_tag '興福寺と鹿.jpg', class: 'slide_photo' %></div>
+      <div class="swiper-slide"><%= image_tag '平等院全景.jpg', class: 'slide_photo' %></div>
+      <div class="swiper-slide"><%= image_tag '功山寺仏殿.jpg', class: 'slide_photo' %></div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
 </div>
+
+<script src="//unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <div class = 'contents'>
 
@@ -11,14 +26,14 @@
   </div>
 
   <%# 使用方法 %>
-  <div class = 'how_to'>
-    <div class = 'left_content'>
-    </div>
-    <div class = 'center_content'>
-    </div>
-    <div class = 'right_content'>
-    </div>
-  </div>
+  <ul class = 'how_to'>
+    <li class = 'left_content'>
+    </li>
+    <li class = 'center_content'>
+    </li>
+    <li class = 'right_content'>
+    </li>
+  </ul>
 
   <%# 自己紹介 %>
   <div class = 'author'>
@@ -29,3 +44,4 @@
 <%# 各種リンク %>
 <div class = 'footer_link'>
 </div>
+
