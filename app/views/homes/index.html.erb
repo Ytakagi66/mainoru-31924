@@ -1,39 +1,58 @@
 <div class = 'slide'>
-  <!-- Slider main container -->
-  <div class="swiper-container">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide"><%= image_tag '白髭神社.jpg', class: 'slide_photo' %></div>
-      <div class="swiper-slide"><%= image_tag '興福寺と鹿.jpg', class: 'slide_photo' %></div>
-      <div class="swiper-slide"><%= image_tag '平等院全景.jpg', class: 'slide_photo' %></div>
-      <div class="swiper-slide"><%= image_tag '功山寺仏殿.jpg', class: 'slide_photo' %></div>
-    </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
-  </div>
+  <%= render 'swiper' %>
 </div>
 
-<script src="//unpkg.com/swiper/swiper-bundle.min.js"></script>
+<div class = 'top_header'>
+  <div class = 'top_header_title'>
+    <h1>お参りする</h1>
+    <h1>お祈りする</h1>
+  </div>
+</div>
 
 <div class = 'contents'>
 
   <%# ページの特徴 %>
   <div class = 'features'>
+    <div class = 'features_info'>
+    <h3 class = "top_title"><span class = 'under_boder'>まいのる<span>とは</span></span></h3>
+      <div class = 'content'>
+      <p>神社や寺院に"参る"と"祈る"ことを意味して付けました。</p>
+      <p>日本人は古来より節目節目で神社やお寺にお参りに行き、平安を祈ってきました。<br>
+          初七日、七五三、正月に節分、結婚式やお葬式等日常に密接に関わっています。</p>
+      <p>そんな神社や寺院をもっと知りたいという想いからこのサイトを作りました！</p>
+      </div>
+    </div>
+  </div>
+  
+  <%# まいのるでできる事 %>
+  <div class = 'how_to'>
+    <div class = 'how_to_header'>
+      <h1>まいのるで出来ること</h1>
+    </div>
+    <div class = 'first_content', id= 'first_photo'>
+    <%= link_to '#' do %>
+      <%= image_tag '厳島神社大鳥居.jpg', class: 'photo' %>
+      <p>日本中の神社を探しに行こう</p>
+      <h3 class = 'top_select'># 神社に参る</h3>
+      <p class = 'thought_text'>みんなでお気に入りの神社の写真や情報を投稿し、情報交換をしましょう。<br>
+      祈りの旅に今こそ出掛けよう</p>
+      <% end %>
+    </div>
+    <div class = 'second_content', id = 'second_photo'>
+    <%= link_to '#' do %>
+      <p class = >日本中のお寺を探しに行こう</p>
+      <%= image_tag '東本願寺.jpg', class: 'photo'%>
+      <h3 class = 'top_select'># お寺に参る</h3>
+      <p class = 'thought_text'>みんなでお気に入りのお寺の写真や情報を投稿し、情報交換をしましょう。<br>
+      心の拠り所を探す旅に今こそ出掛けよう</p>
+      <% end %>
+    </div>
+    <div class = 'third_content'>
+    <%= link_to '#' do %>
+    <% end %>
+    </div>
   </div>
 
-  <%# 使用方法 %>
-  <ul class = 'how_to'>
-    <li class = 'left_content'>
-    </li>
-    <li class = 'center_content'>
-    </li>
-    <li class = 'right_content'>
-    </li>
-  </ul>
 
   <%# 自己紹介 %>
   <div class = 'author'>
