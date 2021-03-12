@@ -1,27 +1,11 @@
 <div class = 'shrine_index'>
-  <div class = 'line_contents'>
-    <div class = 'left_box'>
-    </div>
-    <div class = 'center_box'>
-    </div>
-    <div class = 'right_box'>
-    </div>  
-  </div>
-  <div class = 'line_contents'>
-    <div class = 'left_box'>
-    </div>
-    <div class = 'center_box'>
-    </div>
-    <div class = 'right_box'>
-    </div>  
-  </div>
-  <div class = 'line_contents'>
-    <div class = 'left_box'>
-    </div>
-    <div class = 'center_box'>
-    </div>
-    <div class = 'right_box'>
-    </div>  
-  </div>
-
+  <ul>
+    <% if @shrine.present? %>
+      <%= @shrines.each do |shrine| %>
+        <li><%= shrine.content %></li>
+      <% end %>
+    <% else %>
+      <%= image_tag '大嘗宮.jpg', class: "item-img" %>
+    <% end %>
+  </ul>
 </div>

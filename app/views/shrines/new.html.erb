@@ -1,0 +1,85 @@
+<div class="shrines-sell-contents">
+  <header class="shrines-sell-header">
+    <%= link_to image_tag('mainoru-logo-color.png' , size: '185x50'), "/" %>
+
+  </header>
+  <div class="shrines-sell-main">
+    <h2 class="shrines-sell-title">商品の情報を入力</h2>
+    <%= form_with(model:@shrine, local: true) do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <%# 投稿画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        神社の画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"shrine-image" %>
+      </div>
+    </div>
+
+    <%# 商品名と商品説明 %>
+    <div class="new-shrines">
+      <div class="weight-bold-text">
+        神社名
+        <span class="indispensable">必須</span>
+      </div>
+    <%= f.text_area :name, class:"shrines-text", id:"shrine-name", placeholder:"神社名（必須 40文字まで)", maxlength:"40" %>
+
+      <div class="weight-bold-text">
+        神社の説明
+        <span class="indispensable">必須</span>
+      </div>
+    <%= f.text_area :info, class:"shrines-text", id:"shrine-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+
+      <div class="weight-bold-text">
+        ご利益
+        <span class="indispensable">必須</span>
+      </div>
+    <%= f.collection_select(:benefits_id, Benefits.all, :id, :name, {}, {class:"select-box", id:"shrine-benefits"}) %>
+
+    <%# 神社の住所 %>
+      <div class="weight-bold-text">
+        都道府県
+        <span class="indispensable">必須</span>
+      </div>
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"shrine-prefecture"}) %>
+
+      <div class="weight-bold-text">
+        市区町村
+        <span class="indispensable">必須</span>
+      </div>
+    <%= f.text_area :city, class:"shrines-text", id:"shrine-city", placeholder:"市区町村" ,maxlength:"1000" %>
+
+      <div class="weight-bold-text">
+        番地
+        <span class="indispensable">必須</span>
+      </div>
+    <%= f.text_area :address, class:"shrines-text", id:"shrine-address", placeholder:"1-2-2" ,maxlength:"1000" %>
+  </div>
+
+  <%# 下部ボタン %>
+  <div class="sell-btn-contents">
+    <%= f.submit "投稿する" ,class:"sell-btn" %>
+    <%=link_to 'もどる', root_path, class:"back-btn" %>
+  </div>
+</div>
+
+<% end %>
+<footer class="items-sell-footer">
+  <ul class="menu">
+    <li><a href="#">プライバシーポリシー</a></li>
+    <li><a href="#">フリマ利用規約</a></li>
+    <li><a href="#">特定商取引に関する表記</a></li>
+  </ul>
+  <%= link_to image_tag('mainoru-logo-color.png' , size: '185x50'), "/" %>
+  <p class="inc">
+    ©︎Furima,Inc.
+  </p>
+</footer>
+</div>
