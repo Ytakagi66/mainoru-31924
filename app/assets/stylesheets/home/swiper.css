@@ -1,0 +1,30 @@
+.slide {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -999;
+  top: 0;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-item{
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  &:nth-child(2n){
+    background: #fafafa;
+    color: #222;
+  }
+}
+
+.slide_photo {
+  height: 100%;
+  width: 100%;
+}
