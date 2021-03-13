@@ -1,12 +1,15 @@
 class Shrine < ApplicationRecord
-  has_one_attached :image
   belongs_to :user
+  has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :genre
+  belongs_to :benefits
+  belongs_to :prefecture
 
   with_options presence: true do
     validates :image
+    validates :latitude
+    validates :longitude
     validates :name, length: { maximum: 40 }
     validates :info, length: { maximum: 1000 }
   end
