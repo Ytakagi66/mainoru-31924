@@ -19,8 +19,16 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"shrine-image" %>
+        <label class='image_update_label'>
+        <div id='image_preview'></div>
+        <div id="image-list">
+          <% @shrine.images.each do |image| %>
+            <%= image_tag image, class: 'images' %>
+          <% end %>
+        </div>  
+        <%= f.file_field :image, name: 'shrine[images][]', id: 'shrine_image' %>
       </div>
+    </label>
     </div>
 
     <%# 商品名と商品説明 %>

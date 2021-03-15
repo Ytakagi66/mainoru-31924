@@ -23,6 +23,6 @@ class ShrinesController < ApplicationController
   private
 
   def shrine_params
-    params.require(:shrine).permit(:name, :info, :image, :benefits_id, :address, :latitude, :longitude).merge(user_id: current_user.id)
+    params.require(:shrine).permit(:name, :info, :benefits_id, :address, :latitude, :longitude, images: []).merge(user_id: current_user.id)
   end
 end
