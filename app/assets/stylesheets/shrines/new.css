@@ -125,19 +125,19 @@
 }
 
 .image_num_0{
-  width: 75%;
+  width: 0;
 }
 
 .image_num_1 {
-  width: 50%;
+  width: 0;
 }
 
 .image_num_2 {
-  width: 25%;
+  width: 0;
 }
 
 .image_num_3 {
-  width: 0%;
+  width: 0;
 }
 
 #shrine_image {
@@ -147,6 +147,13 @@
 .post_images {
   display: flex;
   justify-content: flex-start;
+}
+
+.input_shrine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 /* 神社名と神社説明 */

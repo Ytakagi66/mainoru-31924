@@ -25,8 +25,11 @@
           <% @shrine.images.each do |image| %>
             <%= image_tag image, class: 'images' %>
           <% end %>
-        </div>  
-        <%= f.file_field :image, name: 'shrine[images][]', id: 'shrine_image' %>
+        </div> 
+        <div class = 'input_shrine'>
+          <%= f.file_field :image, name: 'shrine[images][]', id: 'shrine_image' %>
+          <span><i class="fas fa-camera"></i></span>
+        </div>
       </div>
     </label>
     </div>
@@ -43,7 +46,7 @@
         神社の説明
         <span class="indispensable">必須</span>
       </div>
-    <%= f.text_area :info, class:"shrines-text", id:"shrine-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+    <%= f.text_area :info, class:"shrines-text", id:"shrine-info", placeholder:"神社の説明（必須 1,000文字まで）（歴史、創建、文化財登録情報、自然など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
 
       <div class="weight-bold-text">
         ご利益
