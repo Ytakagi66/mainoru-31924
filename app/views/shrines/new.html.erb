@@ -4,8 +4,8 @@
 
   </header>
   <div class="shrines-sell-main">
-    <h2 class="shrines-sell-title">商品の情報を入力</h2>
-    <%= form_with(model:@shrine, local: true) do |f| %>
+    <h2 class="shrines-sell-title">神社の情報を入力</h2>
+    <%= form_with(model:@shrine, id: 'shrine-form', local: true) do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
 
@@ -19,8 +19,19 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"shrine-image" %>
+        <label class='image_update_label'>
+        <div id='image_preview'></div>
+        <div id="image-list">
+          <% @shrine.images.each do |image| %>
+            <%= image_tag image, class: 'images' %>
+          <% end %>
+        </div> 
+        <div class = 'input_shrine'>
+          <%= f.file_field :image, name: 'shrine[images][]', id: 'shrine_image' %>
+          <span><i class="fas fa-camera"></i></span>
+        </div>
       </div>
+    </label>
     </div>
 
     <%# 商品名と商品説明 %>
@@ -35,7 +46,7 @@
         神社の説明
         <span class="indispensable">必須</span>
       </div>
-    <%= f.text_area :info, class:"shrines-text", id:"shrine-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+    <%= f.text_area :info, class:"shrines-text", id:"shrine-info", placeholder:"神社の説明（必須 1,000文字まで）（歴史、創建、文化財登録情報、自然など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
 
       <div class="weight-bold-text">
         ご利益
@@ -45,19 +56,7 @@
 
     <%# 神社の住所 %>
       <div class="weight-bold-text">
-        都道府県
-        <span class="indispensable">必須</span>
-      </div>
-    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"shrine-prefecture"}) %>
-
-      <div class="weight-bold-text">
-        市区町村
-        <span class="indispensable">必須</span>
-      </div>
-    <%= f.text_area :city, class:"shrines-text", id:"shrine-city", placeholder:"市区町村" ,maxlength:"1000" %>
-
-      <div class="weight-bold-text">
-        番地
+        住所
         <span class="indispensable">必須</span>
       </div>
     <%= f.text_area :address, class:"shrines-text", id:"shrine-address", placeholder:"1-2-2" ,maxlength:"1000" %>
@@ -79,7 +78,8 @@
   </ul>
   <%= link_to image_tag('mainoru-logo-color.png' , size: '185x50'), "/" %>
   <p class="inc">
-    ©︎Furima,Inc.
+    ©︎Mainoru,Inc.
   </p>
 </footer>
 </div>
+

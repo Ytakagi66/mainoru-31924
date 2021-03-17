@@ -15,9 +15,9 @@
 
 .shrines-sell-main {
   background-color: #FFF;
-  width: 70vw;
+  width: 75vw;
   min-width: 450px;
-  padding: 10vh 15vw;
+  padding: 10vh 10vw;
 }
 
 .shrines-sell-title {
@@ -69,7 +69,7 @@
 
 /* /共通 */
 
-/* 出品画像 */
+/* 神社画像 */
 .img-upload {
   display: flex;
   justify-content: space-between;
@@ -79,23 +79,91 @@
 
 .click-upload {
   margin: 15px 0;
-  min-width: 250px;
+  min-width: 100%;
 }
 
 .click-upload>p {
   margin-bottom: 15px;
 }
 
-/* /出品画像 */
+.cls_image{
+  width: 198px;
+  height: 180px;
+}
 
-/* 商品名と商品説明 */
+#image-list {
+  height: 180px;
+  background-color: rgb(205, 204, 206);
+  margin-left: 10px;
+}
+
+.image_preview{
+  display: flex;
+  width: 700px;
+}
+
+.image_update_label {
+  display: flex;
+  background-color: rgb(205, 204, 206);
+  height: 180px;
+}
+
+.preview_num_0 {
+  width: 25%;
+}
+
+.preview_num_1 {
+  width: 50%;
+}
+
+.preview_num_2 {
+  width: 75%;
+}
+
+.preview_num_3 {
+  width: 100%;
+}
+
+.image_num_0{
+  width: 0;
+}
+
+.image_num_1 {
+  width: 0;
+}
+
+.image_num_2 {
+  width: 0;
+}
+
+.image_num_3 {
+  width: 0;
+}
+
+#shrine_image {
+  display: none;
+}
+
+.post_images {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.input_shrine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* 神社名と神社説明 */
 .new-shrines {
   padding: 2vh 0;
 }
 
 .shrines-text {
   width: 100%;
-  padding: 16px 16px 8px;
+  padding: 6px 16px 6px;
   border-radius: 4px;
   border: 1px solid #ccc;
   font-size: 16px;
@@ -106,7 +174,19 @@
   margin-top: 2vh;
 }
 
-/* 商品の詳細など */
+.file_upload {
+  width: 100%;
+  height: 200px;
+  background-color: rgb(223, 221, 221);
+  display: flex;
+  align-items: center;
+}
+
+.shrine_image_content {
+  display: none;
+}
+
+/* 神社の詳細など */
 .shrines-detail {
   display: flex;
   justify-content: space-between;
