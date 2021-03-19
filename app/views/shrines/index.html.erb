@@ -1,0 +1,11 @@
+<div class = 'shrine_index'>
+  <ul>
+    <% if @shrine.present? %>
+      <%= @shrines.each do |shrine| %>
+        <li><%= shrine.content %></li>
+      <% end %>
+    <% else %>
+      <%= image_tag '大嘗宮.jpg', class: "item-img" %>
+    <% end %>
+  </ul>
+</div>
