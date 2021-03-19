@@ -11,6 +11,15 @@ class ShrinesController < ApplicationController
     @shrine = Shrine.new
   end
 
+  def create
+    @shrine = Shrine.new(shrine_params)
+    if @shrine.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
   private
 
   def shrine_params
