@@ -12,6 +12,7 @@ require("../swiper")
 require("../how_to")
 require("../map")
 require('../preview')
+require('shrines/swiper')
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

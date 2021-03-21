@@ -4,7 +4,8 @@ class ShrinesController < ApplicationController
   end
 
   def show
-    @Shrine = Shrine.find(params[:id])
+    @shrine = Shrine.find(params[:id])
+    num = 0
   end
 
   def new

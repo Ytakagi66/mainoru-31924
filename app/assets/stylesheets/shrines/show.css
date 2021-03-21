@@ -1,4 +1,102 @@
 .shrine_show {
-  height: 200vh;
+  height: 500vh;
   width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.show_main {
+  width: 100%;
+  height: 100%;
+  background-color: indigo;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* 神社画像の表示 */
+.show_image {
+  width: 90%;
+  height: calc(100vh - 150px);
+  margin-top: 15px;
+  background-color: khaki;  
+}
+
+.image {
+  width: 85%;
+  height: 100vh;
+  background-color: teal;
+  margin: 15px;
+}
+
+.shrine_image {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-top {
+  height: 100%;
+  width: 100%;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.show_info {
+  width: 90%;
+  height: 800px;
+  margin-top: 15px;
+  padding: 15px;
+  background-color: lightblue;
+  display: flex;
+}
+
+.shrine_map {
+  width: 90%;
+  height: 800px;
+  margin: 15px;
+  background-color: lightpink;
+}
+
+.shrine_comments {
+  width: 90%;
+  height: 400px;
+  margin: 15px 0;
+  background-color: lightgrey;
+}
+
+.shrine_goshuin {
+  width: 90%;
+  height: 450px;
+  margin: 0 0 15px;
+  background-color: lightgrey;
+}
+
+.shrine_build {
+  width: 90%;
+  height: 450px;
+  margin: 0 0 15px;
+  background-color: lightgrey;
+}
+
+.shrine_nature {
+  width: 90%;
+  height: 450px;
+  margin: 0 0 15px;
+  background-color: lightgrey;
+}
+
+.shrine_history {
+  width: 90%;
+  height: 450px;
+  margin: 0 0 15px;
+  background-color: lightgrey;
 }
