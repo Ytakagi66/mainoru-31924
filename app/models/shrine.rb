@@ -4,7 +4,7 @@ class Shrine < ApplicationRecord
   has_many_attached :images
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :prefecture
+  belongs_to :benefits
 
   with_options presence: true do
     validates :images

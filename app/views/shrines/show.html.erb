@@ -1,6 +1,11 @@
 <div class = 'shrine_show'>
   <div class = 'show_main'>
-  <%# 神社画像の表示 %>
+
+    <div class = 'shrine_name'>
+      <%= @shrine.name %>
+    </div>
+
+    <%# 神社画像の表示 %>
     <div class = 'show_image'>
       <%= render 'swiper'%>
     </div>
@@ -8,6 +13,21 @@
     <%# 神社情報の表示 %>
     <div class = 'show_info'>
       <div class = 'guide'>
+      <h1>神社について</h1>
+        <table>
+          <tr>
+            <td class = 'info'>説明</td>
+            <td><%= @shrine.info %></td>
+          </tr>
+          <tr>
+            <td>住所</td>
+            <td><%= @shrine.address %></td>
+          </tr>
+          <tr>
+            <td>ご利益</td>
+            <td><%= @shrine.benefits.name %></td>
+          </tr>                 
+        </table>
       </div>
 
       <%# 神社の所在地を示す地図の表示 %>

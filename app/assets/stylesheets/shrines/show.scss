@@ -13,13 +13,25 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  position: relative;
+}
+
+.shrine_name {
+  height: 5vh;
+  position: absolute;
+  left: 0;
+  margin-left: 10vw;
+  font-size: 3rem;
+  font-family: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体';
+  margin-bottom: 20px;
+  padding-top: 15px;
 }
 
 /* 神社画像の表示 */
 .show_image {
   width: 90%;
   height: calc(100vh - 150px);
-  margin-top: 15px;
+  margin-top: 100px;
   background-color: khaki;  
 }
 
@@ -65,20 +77,45 @@
   opacity: 1;
 }
 
+// 概要説明
 .show_info {
   width: 90%;
   height: 450px;
   margin-top: 15px;
   padding: 15px;
-  background-color: lightblue;
+  background-color: white;
   display: flex;
 }
 
 .guide {
   width: 70%;
   height: 100%;
-  margin-right: 15px;
-  background-color: crimson;
+  margin: 15px;
+  font-size: 20px;
+
+  h1 {
+    font-size: larger;
+    border-bottom: black 1px solid;
+    width: 150px;
+  }
+
+  table, td {
+    border: black 2px solid;
+  }
+
+  table {
+    margin: 10px;
+    width: 97%;
+    box-shadow: 6px 6px black; 
+  }
+
+  td {
+    padding: 20px;
+  }
+  
+  .info {
+    height: 190px;
+  }
 }
 
 .shrine_map {
