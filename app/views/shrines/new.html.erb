@@ -22,12 +22,10 @@
         <label class='image_update_label'>
         <div id='image_preview'></div>
         <div id="image-list">
-          <% @shrine.images.each do |image| %>
-            <%= image_tag image, class: 'images' %>
-          <% end %>
+
         </div> 
         <div class = 'input_shrine'>
-          <%= f.file_field :image, name: 'shrine[images][]', id: 'shrine_image' %>
+          <%= f.file_field :image, multiple: true, name: 'shrine[images][]', id: 'shrine_image' %>
           <span><i class="fas fa-camera"></i></span>
         </div>
       </div>

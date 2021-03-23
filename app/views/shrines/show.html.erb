@@ -7,11 +7,14 @@
 
     <%# 神社情報の表示 %>
     <div class = 'show_info'>
-    </div>
+      <div class = 'guide'>
+      </div>
 
-    <%# 神社の所在地を示す地図の表示 %>
-    <div class = 'shrine_map'>
-    </div>    
+      <%# 神社の所在地を示す地図の表示 %>
+      <div class = 'shrine_map'>
+        <div id="map" data-json="<%= @shrine.to_json %>"></div>
+      </div>    
+    </div>
 
     <%# この神社についてのコメント欄 %>
     <div class = 'shrine_comments'>
@@ -36,3 +39,4 @@
 </div>
 
 <script src="//unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyadiU2YaDtGtxz6KHPYO_CHRG42Ji26g&callback=initMap"></script>

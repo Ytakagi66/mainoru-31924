@@ -1,18 +1,27 @@
 function select(){
-  const selectImage0 = document.getElementById('select_image0');
-  const selectImage1 = document.getElementById('select_image1');
-  const swiperSlide = document.getElementById('swiper-slide_main');
-  const swiperWrapper = document.getElementById('swiper-wrapper');  
-  selectImage0.addEventListener('click', function() {
-    const src0 = selectImage0.getAttribute('src')
-    swiperSlide.setAttribute('src',src0)
-    const swiperSrc = swiperSlide.getAttribute('src')
-    console.log(swiperSrc)
-  })
-  selectImage1.addEventListener('click', function() {
-    const src1 = selectImage1.getAttribute('src')
-    swiperSlide.setAttribute('src',src1)
-  })
+
+
+  var galleryThumbs = new Swiper('.gallery-thumbs', {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    loop: true,
+    freeMode: true,
+    loopedSlides: 5, //looped slides should be the same
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+  });
+  var galleryTop = new Swiper('.gallery-top', {
+    spaceBetween: 10,
+    loop: true,
+    loopedSlides: 5, //looped slides should be the same
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    thumbs: {
+      swiper: galleryThumbs,
+    },
+  });  
 }
 
 window.addEventListener('load', select);

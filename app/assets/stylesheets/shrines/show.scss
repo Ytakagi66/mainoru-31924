@@ -50,20 +50,45 @@
   background-position: center;
 }
 
+.gallery-thumbs {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.gallery-thumbs .swiper-slide {
+  height: 100%;
+  opacity: 0.4;
+}
+
+.gallery-thumbs .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
 .show_info {
   width: 90%;
-  height: 800px;
+  height: 450px;
   margin-top: 15px;
   padding: 15px;
   background-color: lightblue;
   display: flex;
 }
 
+.guide {
+  width: 70%;
+  height: 100%;
+  margin-right: 15px;
+  background-color: crimson;
+}
+
 .shrine_map {
-  width: 90%;
-  height: 800px;
-  margin: 15px;
+  width: 45%;
+  height: 100%;
   background-color: lightpink;
+
+  #map {
+    height: 100%;
+  }
 }
 
 .shrine_comments {

@@ -5,7 +5,7 @@ class ShrinesController < ApplicationController
 
   def show
     @shrine = Shrine.find(params[:id])
-    num = 0
+    @shrine_json = @shrine.to_json
   end
 
   def new
