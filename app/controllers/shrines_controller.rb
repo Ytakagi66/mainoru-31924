@@ -6,6 +6,8 @@ class ShrinesController < ApplicationController
   def show
     @shrine = Shrine.find(params[:id])
     @shrine_json = @shrine.to_json
+    @comment = @shrine.comments.new
+    @comments = @shrine.comments.all
   end
 
   def new
@@ -26,4 +28,5 @@ class ShrinesController < ApplicationController
   def shrine_params
     params.require(:shrine).permit(:name, :info, :benefits_id, :address, :latitude, :longitude, images: []).merge(user_id: current_user.id)
   end
+
 end

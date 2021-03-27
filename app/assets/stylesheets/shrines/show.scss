@@ -1,5 +1,5 @@
 .shrine_show {
-  height: 500vh;
+  height: 100%;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -128,37 +128,125 @@
   }
 }
 
+// コメント欄
+
 .shrine_comments {
   width: 90%;
-  height: 400px;
+  height: 600px;
   margin: 15px 0;
   background-color: lightgrey;
+  position: relative;
+
+  .form {
+    background-color: #DDDDDD;
+    height: 90px;
+    padding: 20px 40px;
+    display: flex;
+  }
+  
+  .form-input {
+    background-color: white;
+    display: flex;
+    width: 100%;
+  }
+  
+  .form-message {
+    border: none;
+    height: 50px;
+    width: 100%;
+    padding-left: 10px;
+  }
+  
+  .form-submit {
+    background-color: #38AEF0;
+    border: none;
+    color: white;
+    font-size: 16px;
+    height: 50px;
+    margin-left: 15px;
+    padding: 0 20px;
+  }
+  
+  .form-image {
+    font-size: 12px;
+    background-color: lightblue;
+    color: white;
+    padding: 12px;
+    width: 60px;
+    margin: 5px 10px;
+    text-align: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+  .comment_preview {
+    display: flex;
+    justify-content: center;
+
+    .comments {
+      height: 80%;
+      width: 95%;
+      margin: 15px;
+      position: absolute;
+      background-color: white;
+    }    
+  }
+
+.message {
+  margin: 10px;
+
+  .upper-message {
+    display: flex;
+
+    .message-date {
+      width: 100%;
+      margin-left: 10px;
+    }
+  }
 }
 
-.shrine_goshuin {
-  width: 90%;
-  height: 450px;
-  margin: 0 0 15px;
-  background-color: lightgrey;
 }
 
-.shrine_build {
-  width: 90%;
-  height: 450px;
-  margin: 0 0 15px;
-  background-color: lightgrey;
+.message {
+  width: 100%;
+  display: flex;
 }
 
-.shrine_nature {
+.first_category {
   width: 90%;
-  height: 450px;
-  margin: 0 0 15px;
-  background-color: lightgrey;
-}
+  height: 600px;
+  display: flex;
+  position: relative;
 
-.shrine_history {
+  .shrine_goshuin {
+    width: 50%;
+    height: 100%;
+    background-color: gold;
+  }
+  
+  .shrine_build {
+    width: 50%;
+    height: 100%;
+    background-color: lightgrey;
+  }
+}
+  
+.second_category {  
   width: 90%;
-  height: 450px;
-  margin: 0 0 15px;
-  background-color: lightgrey;
+  height: 600px;
+  display: flex;
+    
+  .shrine_nature {
+    width: 50%;
+    height: 100%;
+    background-color: blue;
+  }
+  
+  .shrine_history {
+    width: 50%;
+    height: 100%;
+    background-color: red;
+  }  
 }

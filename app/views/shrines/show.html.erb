@@ -38,23 +38,46 @@
 
     <%# この神社についてのコメント欄 %>
     <div class = 'shrine_comments'>
+      <%= form_with( model: [@shrine, @comment], class: 'form', local: true) do |f| %>
+        <div class="form-input">
+          <%= f.text_field :text, class: 'form-message', placeholder: 'type a message' %>
+          <label class="form-image">
+            <span class="image-file">画像</span>
+            <%= f.file_field :image, class: 'hidden' %>
+          </label>
+        </div>
+        <%= f.submit '送信', class: 'form-submit' %>
+      <% end %>
+      <div class = 'comment_preview'>
+        <div class="comments">
+          <h4>＜コメント一覧＞</h4>
+          <%= render partial: 'comment', collection: @comments %>
+        </div>
+      </div> 
     </div>
+    
+    <div class = 'first_category'>
+      <%# 御朱印についての投稿 %>
+      <div class = 'shrine_goshuin'>
+      御朱印
+      </div>
 
-    <%# 御朱印についての投稿 %>
-    <div class = 'shrine_goshuin'>
+      <%# 神社の自然についての投稿 %>
+      <div class = 'shrine_build'>
+      建築
+      </div>
     </div>
+    <div class = 'second_category'>
+      <%# 神社の自然についての投稿 %>
+      <div class = 'shrine_nature'>
+      自然
+      </div>
 
-    <%# 神社の自然についての投稿 %>
-    <div class = 'shrine_build'>
+      <%# 神社の歴史についての投稿 %>
+      <div class = 'shrine_history'>
+      歴史
+      </div>        
     </div>
-
-    <%# 神社の自然についての投稿 %>
-    <div class = 'shrine_nature'>
-    </div>
-
-    <%# 神社の歴史についての投稿 %>
-    <div class = 'shrine_history'>
-    </div>    
   </div>
 </div>
 

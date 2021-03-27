@@ -2,6 +2,8 @@ class Shrine < ApplicationRecord
 
   belongs_to :user
   has_many_attached :images
+  has_many :shrine_comments, dependent: :destroy
+  has_many :comments, through: :shrine_comments, validate: false
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :benefits
