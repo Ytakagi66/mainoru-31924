@@ -7,7 +7,7 @@ class ShrinesController < ApplicationController
     @shrine = Shrine.find(params[:id])
     @shrine_json = @shrine.to_json
     @comment = @shrine.comments.new
-    @comments = @shrine.comments.all
+    @comments = @shrine.comments.all.limit(3).order(id: "DESC")
   end
 
   def new

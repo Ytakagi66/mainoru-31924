@@ -6,9 +6,7 @@ class CommentsController < ApplicationController
   
   def create
     @shrine = Shrine.find(params[:shrine_id])
-    binding.pry
-    if @comment = @shrine.comments.create(shrine_params)
-      binding.pry
+    if @shrine.comments.create(shrine_params)
       redirect_to "/shrines/#{@shrine.id}"
     else
       @comments = @shrine.comments.includes(:user)

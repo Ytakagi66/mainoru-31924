@@ -1,16 +1,17 @@
 <div class="message">
-  <div class="upper-message">
-    <div class="message-date">
-      <!-- 投稿した時刻を出力する -->
-      <%= comment.created_at %>
+  <div class = "comment_image">
+    <div class="message-image comment">
+      <!-- 投稿したメッセージ内容を記述する -->
+      <%= image_tag comment.image.variant(resize: '200x200'), class: 'comment-image' if comment.image.attached? %>
     </div>
   </div>
-    <div class="message-user">
+
+  <div class = "comment_text">
+    <div class="message-user comment">
       <!-- 投稿したユーザー名情報を出力する -->
       <%= comment.user.nickname %>
     </div>  
-  <div class="lower-message">
-    <div class="message-content">
+    <div class="message-content comment">
       <!-- 投稿したメッセージ内容を記述する -->
       <%= comment.text %>
     </div>
