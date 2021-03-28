@@ -46,16 +46,6 @@
   <div id="container">
     <div id="slide" class="">
       <div id="first" class="box">
-      </div>
-
-      <div id="second" class="box">TAB TWO</div>
-      <div id="third" class="box">TAB THREE</div>
-      <div id="four" class="box">TAB FOUR</div>
-      <div id="five" class="box">TAB FIVE</div>
-    </div>
-  </div>
-</div>
-
         <%# この神社についてのコメント欄 %>
         <div class = 'shrine_comments'>
           <div class = 'comment_form'>
@@ -69,13 +59,23 @@
               </div>
               <%= f.submit '送信', class: 'form-submit' %>
             <% end %>
-          </div>
-
             <div class="shrine_comment_content">
               <h4>＜コメント一覧＞</h4>
               <%= render partial: 'comment', collection: @comments %>
-            </div>
-        </div>      
+            </div>            
+          </div>
+        </div>            
+      </div>
+
+      <div id="second" class="box">TAB TWO</div>
+      <div id="third" class="box">TAB THREE</div>
+      <div id="four" class="box">TAB FOUR</div>
+      <div id="five" class="box">TAB FIVE</div>
+    </div>
+  </div>
+</div>
+
+
 
     
     <div class = 'first_category'>

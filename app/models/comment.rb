@@ -6,7 +6,7 @@ class Comment < ApplicationRecord
 
   with_options presence: true do
     validates :text
-    validates :image
+    # validates :image
   end
 
   def was_attached?

@@ -156,8 +156,8 @@
 #container {
     position: relative;
     width: 100%;
-    height: 200px;
-    // overflow: hidden;
+    height: 650px;
+    overflow: hidden;
     clear: left;
 }
 
@@ -166,12 +166,7 @@
     white-space: nowrap;
     position: absolute;
     width: 100%;
-    height: 200px;
-
-    line-height: 200px;
-    text-align: center;
-    font-size: 28pt;
-    cursor: pointer;
+    height: 100%;
 }
 
 #first {
@@ -182,7 +177,7 @@
 
 #second {
     top: 0px;
-    left: 800px;
+    left: 1200px;
 }
 
 #third {
@@ -239,7 +234,7 @@
 // コメント欄
 
 .shrine_comments {
-  width: 90%;
+  width: 100%;
   height: 100%;
   margin: 0 15px 0 0;
   background-color: #fff;
@@ -291,8 +286,8 @@
       display: none;
     }
   }
-  .shrine_comments {
-    height: 600px;
+  .shrine_comment_content {
+    height: 500px;
     width: auto;
     margin: 20px;
     flex-direction: column;
