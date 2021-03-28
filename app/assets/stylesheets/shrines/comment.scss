@@ -1,0 +1,14 @@
+.comments {
+  margin: 10px;
+  border: rgb(206, 206, 206) solid 1px;
+  display: flex;
+
+  .comment-image {
+    margin: 10px;
+
+    .comment-date {
+      width: 100%;
+      
+    }
+  }
+}

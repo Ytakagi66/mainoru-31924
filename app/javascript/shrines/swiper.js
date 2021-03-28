@@ -1,6 +1,4 @@
 function select(){
-
-
   var galleryThumbs = new Swiper('.gallery-thumbs', {
     spaceBetween: 10,
     slidesPerView: 4,

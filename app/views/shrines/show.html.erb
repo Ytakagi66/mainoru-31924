@@ -36,26 +36,47 @@
       </div>    
     </div>
 
-    <%# この神社についてのコメント欄 %>
-    <div class = 'shrine_comments'>
-      <div class = 'comment_form'>
-        <%= form_with( model: [@shrine, @comment], class: 'form', local: true) do |f| %>
-          <div class="form-input">
-            <%= f.text_field :text, class: 'form-message', placeholder: 'type a message' %>
-            <label class="form-image">
-              <span class="image-file">画像</span>
-              <%= f.file_field :image, class: 'hidden' %>
-            </label>
-          </div>
-          <%= f.submit '送信', class: 'form-submit' %>
-        <% end %>
+<div id="wrap">
+  <div id="tab1" class="tab selected">すべて</div>
+  <div id="tab2" class="tab">御朱印</div>
+  <div id="tab3" class="tab">建築物</div>
+  <div id="tab4" class="tab">自然</div>
+  <div id="tab5" class="tab">歴史</div>
+
+  <div id="container">
+    <div id="slide" class="">
+      <div id="first" class="box">
       </div>
 
-        <div class="comments">
-          <h4>＜コメント一覧＞</h4>
-          <%= render partial: 'comment', collection: @comments %>
-        </div>
+      <div id="second" class="box">TAB TWO</div>
+      <div id="third" class="box">TAB THREE</div>
+      <div id="four" class="box">TAB FOUR</div>
+      <div id="five" class="box">TAB FIVE</div>
     </div>
+  </div>
+</div>
+
+        <%# この神社についてのコメント欄 %>
+        <div class = 'shrine_comments'>
+          <div class = 'comment_form'>
+            <%= form_with( model: [@shrine, @comment], class: 'form', local: true) do |f| %>
+              <div class="form-input">
+                <%= f.text_field :text, class: 'form-comment', placeholder: 'コメント' %>
+                <label class="form-image">
+                  <span class="image-file">画像</span>
+                  <%= f.file_field :image, class: 'hidden' %>
+                </label>
+              </div>
+              <%= f.submit '送信', class: 'form-submit' %>
+            <% end %>
+          </div>
+
+            <div class="shrine_comment_content">
+              <h4>＜コメント一覧＞</h4>
+              <%= render partial: 'comment', collection: @comments %>
+            </div>
+        </div>      
+
     
     <div class = 'first_category'>
       <%# 御朱印についての投稿 %>

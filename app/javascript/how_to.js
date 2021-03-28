@@ -1,6 +1,7 @@
 function how_to() {
   const firstPhoto = document.getElementById("first_photo");
   const secondPhoto = document.getElementById("second_photo");
+  if (!firstPhoto){ return false;}
 
   firstPhoto.addEventListener('mouseover', function(){
     this.setAttribute("style", "opacity: 0.7;");
