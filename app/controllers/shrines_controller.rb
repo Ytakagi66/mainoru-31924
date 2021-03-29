@@ -8,6 +8,8 @@ class ShrinesController < ApplicationController
     @shrine_json = @shrine.to_json
     @comment = @shrine.comments.new
     @comments = @shrine.comments.all.limit(10).order(id: "DESC")
+    @goshuin = @shrine.goshuins.new
+    @goshuins = @shrine.goshuins.all.limit(10).order(id: "DESC")
   end
 
   def new

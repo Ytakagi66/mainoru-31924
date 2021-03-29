@@ -134,6 +134,7 @@
   width: 90%;
   margin: 0 auto;
   margin-top: 10px;
+  background-color: yellow;
 }
 
 .tab {
@@ -156,9 +157,10 @@
 #container {
     position: relative;
     width: 100%;
-    height: 650px;
+    height: 500px;
     overflow: hidden;
     clear: left;
+    background-color: white;
 }
 
 .box {
@@ -177,22 +179,22 @@
 
 #second {
     top: 0px;
-    left: 1200px;
+    left: 1670px;
 }
 
 #third {
     top: 0px;
-    left: 1600px;
+    left: 2680px;
 }
 
 #four {
     top: 0px;
-    left: 2400px;
+    left: 3680px;
 }
 
 #five {
   top: 0px;
-  left: 3200px;
+  left: 4680px;
 }
 
 #slide {
@@ -202,15 +204,15 @@
 }
 
 .move-to-second {
-    transform: translateX(-800px);
-    -moz-transform: translateX(-800px);
-    -webkit-transform: translateX(-800px);
+    transform: translateX(-1670px);
+    -moz-transform: translateX(-1670px);
+    -webkit-transform: translateX(-1670px);
 }
 
 .move-to-third {
-    transform: translateX(-1600px);
-    -moz-transform: translateX(-1600px);
-    -webkit-transform: translateX(-1600px);
+    transform: translateX(-2200px);
+    -moz-transform: translateX(-2200px);
+    -webkit-transform: translateX(-2200px);
 }
 
 .move-to-first {
@@ -220,15 +222,15 @@
 }
 
 .move-to-four {
-    transform: translateX(-2400px);
-    -moz-transform: translateX(-2400px);
-    -webkit-transform: translateX(-2400px);    
+    transform: translateX(-3200px);
+    -moz-transform: translateX(-3200px);
+    -webkit-transform: translateX(-3200px);    
 }
 
 .move-to-five {
-  transform: translateX(-3200px);
-  -moz-transform: translateX(-3200px);
-  -webkit-transform: translateX(-3200px);    
+  transform: translateX(-4200px);
+  -moz-transform: translateX(-4200px);
+  -webkit-transform: translateX(-4200px);    
 }
 
 // コメント欄
@@ -289,7 +291,7 @@
   .shrine_comment_content {
     height: 500px;
     width: auto;
-    margin: 20px;
+    // margin: 20px;
     flex-direction: column;
     overflow: scroll;
   }  

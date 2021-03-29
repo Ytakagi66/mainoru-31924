@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_23_145109) do
+ActiveRecord::Schema.define(version: 2021_03_29_060623) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2021_03_23_145109) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "goshuins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_goshuins_on_user_id"
+  end
+
   create_table "shrine_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "shrine_id", null: false
     t.bigint "comment_id", null: false
@@ -48,6 +57,15 @@ ActiveRecord::Schema.define(version: 2021_03_23_145109) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["comment_id"], name: "index_shrine_comments_on_comment_id"
     t.index ["shrine_id"], name: "index_shrine_comments_on_shrine_id"
+  end
+
+  create_table "shrine_goshuins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "shrine_id", null: false
+    t.bigint "goshuin_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["goshuin_id"], name: "index_shrine_goshuins_on_goshuin_id"
+    t.index ["shrine_id"], name: "index_shrine_goshuins_on_shrine_id"
   end
 
   create_table "shrine_photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -90,8 +108,11 @@ ActiveRecord::Schema.define(version: 2021_03_23_145109) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "users"
+  add_foreign_key "goshuins", "users"
   add_foreign_key "shrine_comments", "comments"
   add_foreign_key "shrine_comments", "shrines"
+  add_foreign_key "shrine_goshuins", "goshuins"
+  add_foreign_key "shrine_goshuins", "shrines"
   add_foreign_key "shrine_photos", "shrines"
   add_foreign_key "shrines", "users"
 end

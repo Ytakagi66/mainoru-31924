@@ -48,8 +48,18 @@
       <div id="first" class="box">
         <%# この神社についてのコメント欄 %>
         <div class = 'shrine_comments'>
-          <div class = 'comment_form'>
-            <%= form_with( model: [@shrine, @comment], class: 'form', local: true) do |f| %>
+            <div class="shrine_comment_content">
+              <h4>＜コメント一覧＞</h4>
+              <%= render partial: 'comment', collection: @comments %>
+            </div>
+        </div>
+      </div>
+
+      <div id="second" class="box">
+        <div class = "shrine_comments">
+          <div class="shrine_comment_content">
+            <h4>＜コメント一覧＞</h4>
+            <%= form_with( model: [@shrine, @goshuin], class: 'form', local: true) do |f| %>
               <div class="form-input">
                 <%= f.text_field :text, class: 'form-comment', placeholder: 'コメント' %>
                 <label class="form-image">
@@ -58,24 +68,18 @@
                 </label>
               </div>
               <%= f.submit '送信', class: 'form-submit' %>
-            <% end %>
-            <div class="shrine_comment_content">
-              <h4>＜コメント一覧＞</h4>
-              <%= render partial: 'comment', collection: @comments %>
-            </div>            
+            <% end %>          
+            <%= render partial: 'goshuin', collection: @goshuins %>
           </div>
-        </div>            
+        </div>
       </div>
 
-      <div id="second" class="box">TAB TWO</div>
       <div id="third" class="box">TAB THREE</div>
       <div id="four" class="box">TAB FOUR</div>
       <div id="five" class="box">TAB FIVE</div>
     </div>
   </div>
 </div>
-
-
 
     
     <div class = 'first_category'>

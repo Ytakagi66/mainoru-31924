@@ -1,9 +1,9 @@
-      <div class="swiper-container gallery-top">
-        <div class="swiper-wrapper">
-          <% @shrine.images.each do |image|%>
-            <%= image_tag image, class: "swiper-slide" %>
-          <% end %>
-        </div>
-      <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
-      </div>
+<div class="swiper-container gallery-top">
+  <div class="swiper-wrapper">
+    <% @shrine.images.each do |image|%>
+      <%= image_tag image, class: "swiper-slide" %>
+    <% end %>
+  </div>
+<!-- If we need pagination -->
+<div class="swiper-pagination"></div>
+</div>

@@ -4,6 +4,8 @@ class Shrine < ApplicationRecord
   has_many_attached :images
   has_many :shrine_comments, dependent: :destroy
   has_many :comments, through: :shrine_comments, validate: false
+  has_many :shrine_goshuins, dependent: :destroy
+  has_many :goshuins, through: :shrine_goshuins, validate: false
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :benefits
