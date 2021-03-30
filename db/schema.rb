@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_29_060623) do
+ActiveRecord::Schema.define(version: 2021_03_30_123941) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 2021_03_29_060623) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "builds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_builds_on_user_id"
+  end
+
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text"
     t.bigint "user_id", null: false
@@ -48,6 +57,33 @@ ActiveRecord::Schema.define(version: 2021_03_29_060623) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_goshuins_on_user_id"
+  end
+
+  create_table "histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "text", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_histories_on_user_id"
+  end
+
+  create_table "natures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_natures_on_user_id"
+  end
+
+  create_table "shrine_builds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "shrine_id", null: false
+    t.bigint "build_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["build_id"], name: "index_shrine_builds_on_build_id"
+    t.index ["shrine_id"], name: "index_shrine_builds_on_shrine_id"
   end
 
   create_table "shrine_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -66,6 +102,24 @@ ActiveRecord::Schema.define(version: 2021_03_29_060623) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["goshuin_id"], name: "index_shrine_goshuins_on_goshuin_id"
     t.index ["shrine_id"], name: "index_shrine_goshuins_on_shrine_id"
+  end
+
+  create_table "shrine_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "shrine_id", null: false
+    t.bigint "history_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["history_id"], name: "index_shrine_histories_on_history_id"
+    t.index ["shrine_id"], name: "index_shrine_histories_on_shrine_id"
+  end
+
+  create_table "shrine_natures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "shrine_id", null: false
+    t.bigint "nature_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["nature_id"], name: "index_shrine_natures_on_nature_id"
+    t.index ["shrine_id"], name: "index_shrine_natures_on_shrine_id"
   end
 
   create_table "shrine_photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -107,12 +161,21 @@ ActiveRecord::Schema.define(version: 2021_03_29_060623) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "builds", "users"
   add_foreign_key "comments", "users"
   add_foreign_key "goshuins", "users"
+  add_foreign_key "histories", "users"
+  add_foreign_key "natures", "users"
+  add_foreign_key "shrine_builds", "builds"
+  add_foreign_key "shrine_builds", "shrines"
   add_foreign_key "shrine_comments", "comments"
   add_foreign_key "shrine_comments", "shrines"
   add_foreign_key "shrine_goshuins", "goshuins"
   add_foreign_key "shrine_goshuins", "shrines"
+  add_foreign_key "shrine_histories", "histories"
+  add_foreign_key "shrine_histories", "shrines"
+  add_foreign_key "shrine_natures", "natures"
+  add_foreign_key "shrine_natures", "shrines"
   add_foreign_key "shrine_photos", "shrines"
   add_foreign_key "shrines", "users"
 end

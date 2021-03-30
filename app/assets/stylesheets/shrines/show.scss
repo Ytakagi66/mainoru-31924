@@ -210,9 +210,9 @@
 }
 
 .move-to-third {
-    transform: translateX(-2200px);
-    -moz-transform: translateX(-2200px);
-    -webkit-transform: translateX(-2200px);
+    transform: translateX(-2670px);
+    -moz-transform: translateX(-2670px);
+    -webkit-transform: translateX(-2670px);
 }
 
 .move-to-first {
@@ -222,15 +222,15 @@
 }
 
 .move-to-four {
-    transform: translateX(-3200px);
-    -moz-transform: translateX(-3200px);
-    -webkit-transform: translateX(-3200px);    
+    transform: translateX(-3670px);
+    -moz-transform: translateX(-3670px);
+    -webkit-transform: translateX(-3670px);    
 }
 
 .move-to-five {
-  transform: translateX(-4200px);
-  -moz-transform: translateX(-4200px);
-  -webkit-transform: translateX(-4200px);    
+  transform: translateX(-4670px);
+  -moz-transform: translateX(-4670px);
+  -webkit-transform: translateX(-4670px);    
 }
 
 // コメント欄
@@ -238,7 +238,7 @@
 .shrine_comments {
   width: 100%;
   height: 100%;
-  margin: 0 15px 0 0;
+  margin: 15px;
   background-color: #fff;
   position: relative;
 

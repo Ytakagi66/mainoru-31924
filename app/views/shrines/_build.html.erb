@@ -1,0 +1,19 @@
+<div class="comments">
+  <div class = "comment_image">
+    <div class="comment-image comment">
+      <!-- 投稿したメッセージ内容を記述する -->
+      <%= image_tag build.image.variant(resize: '200x200'), class: 'comment-image' if build.image.attached? %>
+    </div>
+  </div>
+
+  <div class = "comment_text">
+    <div class="comment-user comment">
+      <!-- 投稿したユーザー名情報を出力する -->
+      <%= build.user.nickname %>
+    </div>  
+    <div class="comment-content comment">
+      <!-- 投稿したメッセージ内容を記述する -->
+      <%= build.text %>
+    </div>
+  </div>
+</div>

@@ -1,12 +1,10 @@
 class GoshuinsController < ApplicationController
   def show
-    binding.pry
     @goshuins = @shrine.goshuins.includes(:user,:shrine)
   end
   
   def create
     @shrine = Shrine.find(params[:shrine_id])
-    binding.pry
     if @shrine.goshuins.create(shrine_params)
       redirect_to "/shrines/#{@shrine.id}"
     else

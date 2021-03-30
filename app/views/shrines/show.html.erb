@@ -74,9 +74,62 @@
         </div>
       </div>
 
-      <div id="third" class="box">TAB THREE</div>
-      <div id="four" class="box">TAB FOUR</div>
-      <div id="five" class="box">TAB FIVE</div>
+      <div id="third" class="box">
+        <div class = "shrine_comments">
+          <div class="shrine_comment_content">
+            <h4>＜コメント一覧＞</h4>
+            <%= form_with( model: [@shrine, @build], class: 'form', local: true) do |f| %>
+              <div class="form-input">
+                <%= f.text_field :text, class: 'form-comment', placeholder: 'コメント' %>
+                <label class="form-image">
+                  <span class="image-file">画像</span>
+                  <%= f.file_field :image, class: 'hidden' %>
+                </label>
+              </div>
+              <%= f.submit '送信', class: 'form-submit' %>
+            <% end %>          
+            <%= render partial: 'build', collection: @builds %>
+          </div>
+        </div>      
+      </div>
+
+      <div id="four" class="box">
+        <div class = "shrine_comments">
+          <div class="shrine_comment_content">
+            <h4>＜コメント一覧＞</h4>
+            <%= form_with( model: [@shrine, @nature], class: 'form', local: true) do |f| %>
+              <div class="form-input">
+                <%= f.text_field :text, class: 'form-comment', placeholder: 'コメント' %>
+                <label class="form-image">
+                  <span class="image-file">画像</span>
+                  <%= f.file_field :image, class: 'hidden' %>
+                </label>
+              </div>
+              <%= f.submit '送信', class: 'form-submit' %>
+            <% end %>          
+            <%= render partial: 'nature', collection: @natures %>
+          </div>
+        </div>          
+      </div>
+      
+      <div id="five" class="box">
+        <div class = "shrine_comments">
+          <div class="shrine_comment_content">
+            <h4>＜コメント一覧＞</h4>
+            <%= form_with( model: [@shrine, @history], class: 'form', local: true) do |f| %>
+              <div class="form-input">
+                <%= f.text_field :text, class: 'form-comment', placeholder: 'コメント' %>
+                <label class="form-image">
+                  <span class="image-file">画像</span>
+                  <%= f.file_field :image, class: 'hidden' %>
+                </label>
+              </div>
+              <%= f.submit '送信', class: 'form-submit' %>
+            <% end %>          
+            <%= render partial: 'history', collection: @histories %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -108,4 +161,4 @@
 </div>
 
 <script src="//unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyadiU2YaDtGtxz6KHPYO_CHRG42Ji26g&callback=initMap"></script>
+<script async src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap"></script>

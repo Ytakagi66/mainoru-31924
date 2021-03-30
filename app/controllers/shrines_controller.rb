@@ -10,6 +10,12 @@ class ShrinesController < ApplicationController
     @comments = @shrine.comments.all.limit(10).order(id: "DESC")
     @goshuin = @shrine.goshuins.new
     @goshuins = @shrine.goshuins.all.limit(10).order(id: "DESC")
+    @build = @shrine.builds.new
+    @builds = @shrine.builds.all.limit(10).order(id: "DESC")
+    @nature = @shrine.natures.new
+    @natures = @shrine.natures.all.limit(10).order(id: "DESC")
+    @history = @shrine.histories.new
+    @histories = @shrine.histories.all.limit(10).order(id: "DESC")    
   end
 
   def new
