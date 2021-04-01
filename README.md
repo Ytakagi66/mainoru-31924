@@ -104,7 +104,7 @@ Things you may want to cover:
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
-| shrine         | references | null: false, foreign_key: true |
+| shrine         | references | null: false, foreign_key: true | 
 | comment        | references | null: false, foreign_key: true |
 
 ### Association

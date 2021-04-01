@@ -59,6 +59,8 @@ gem 'devise'
 gem 'active_hash'
 gem 'kaminari'
 gem 'mini_magick'
+gem "carrierwave"
 gem 'image_processing', '~> 1.2'
 gem 'geocoder'
 gem 'dotenv'
+gem "jquery-rails"

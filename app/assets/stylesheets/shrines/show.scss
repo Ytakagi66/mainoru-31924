@@ -1,0 +1,34 @@
+@import url("comment.scss");
+@import url("info.scss");
+@import url("image.scss");
+
+.shrine_show {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(238, 237, 235);
+}
+
+.show_main {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.shrine_name {
+  height: 5vh;
+  position: absolute;
+  left: 0;
+  margin-left: 5vw;
+  font-size: 3rem;
+  color: brown;
+  letter-spacing: 15px;
+  font-family: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体';
+  margin-bottom: 20px;
+  padding-top: 15px;
+}
