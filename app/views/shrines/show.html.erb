@@ -16,8 +16,8 @@
       <h1>神社について</h1>
         <table>
           <tr>
-            <td class = 'info'>説明</td>
-            <td><%= @shrine.info %></td>
+            <%# <td class = 'info'>説明</td> %>
+            <td colspan="2", class='shrine_info'><%= @shrine.info %></td>
           </tr>
           <tr>
             <td>住所</td>
@@ -130,32 +130,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-    
-    <div class = 'first_category'>
-      <%# 御朱印についての投稿 %>
-      <div class = 'shrine_goshuin'>
-      御朱印
-      </div>
-
-      <%# 神社の自然についての投稿 %>
-      <div class = 'shrine_build'>
-      建築
-      </div>
-    </div>
-    <div class = 'second_category'>
-      <%# 神社の自然についての投稿 %>
-      <div class = 'shrine_nature'>
-      自然
-      </div>
-
-      <%# 神社の歴史についての投稿 %>
-      <div class = 'shrine_history'>
-      歴史
-      </div>        
     </div>
   </div>
 </div>

@@ -15,6 +15,6 @@ class HistoriesController < ApplicationController
 
   private
   def shrine_params
-    params.require(:histories).permit(:title, :text, :image).merge(user_id: current_user.id)
+    params.require(:history).permit(:title, :text, :image).merge(user_id: current_user.id)
   end
 end
