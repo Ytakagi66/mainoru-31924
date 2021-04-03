@@ -1,6 +1,6 @@
 class ShrinesController < ApplicationController
   def index
-    @shrines = Shrine.all.page(params[:page])
+    @shrines = Shrine.all
   end
 
   def show

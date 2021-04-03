@@ -22,6 +22,7 @@ class Shrine < ApplicationRecord
     validates :longitude
     validates :name, length: { maximum: 40 }
     validates :info, length: { maximum: 1000 }
+    validates :address
   end
 
   geocoded_by :address

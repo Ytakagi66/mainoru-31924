@@ -2,8 +2,12 @@
   box-sizing: border-box;
 }
 
-:not(.homes) > .top-page-header {
+:not(.homes_index) > .top-page-header {
   background-color: rgb(66, 61, 57);
+}
+
+.shrines_index > .top-page-header {
+  background-color: rgb(128, 128, 128, 0.2);
 }
 
 .top-page-header {
@@ -67,12 +71,12 @@
 .category-list {
   text-decoration: none;
   margin-right: 3vw;
-  color: #f6f4ef;
+  color: white;
 }
 
 .brand-list {
   text-decoration: none;
-  color: #f6f4ef;
+  color: white;
 }
 
 .lists-right {
@@ -85,24 +89,24 @@
 .user-nickname {
   text-decoration: none;
   margin-right: 3vw;
-  color: #f6f4ef;
+  color: white;
   font-weight: bold;
 }
 
 
 .logout {
   text-decoration: none;
-  color: #f6f4ef;
+  color: white;
 }
 
 .login {
   text-decoration: none;
   line-height: 32px;
   margin-right: 3vw;
-  color: #f6f4ef;
+  color: white;
 }
 
 .sign-up {
   text-decoration: none;
-  color: #f6f4ef;
+  color: white;
 }
