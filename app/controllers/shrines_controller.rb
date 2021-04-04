@@ -5,6 +5,7 @@ class ShrinesController < ApplicationController
 
   def show
     @shrine = Shrine.find(params[:id])
+    @shrines = Shrine.all.limit(20).order(id: "DESC")
     @shrine_json = @shrine.to_json
     @festival = @shrine.festivals.new
     @festivals = @shrine.festivals.all.limit(10).order(id: "DESC")

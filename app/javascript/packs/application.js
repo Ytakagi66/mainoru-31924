@@ -13,8 +13,9 @@ require("../map")
 require('../preview')
 require('shrines/swiper')
 require('shrines/map')
-require('shrines/comment')
+require('shrines/festival')
 require('shrines/index')
+require('shrines/show')
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

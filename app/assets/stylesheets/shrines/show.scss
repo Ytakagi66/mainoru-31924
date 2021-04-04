@@ -1,18 +1,17 @@
 @import url("comment.scss");
 @import url("info.scss");
 @import url("image.scss");
+@import url("show_nav.scss");
 
 .shrine_show {
   height: 100%;
   width: 100vw;
   display: flex;
-  align-items: center;
-  flex-direction: column;
   background-color: rgb(238, 237, 235);
 }
 
 .show_main {
-  width: 90%;
+  width: 85%;
   height: 100%;
   display: flex;
   align-items: center;

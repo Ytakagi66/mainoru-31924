@@ -9,9 +9,6 @@
   ul {
     width: 100%;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
   }
 
   h1, li {
@@ -25,7 +22,13 @@
   }
 
   li {
+    display: flex;
+    flex-direction: column;
     color: #fff;
+  }
+
+  a {
+    padding: 10px;
   }
 
   .shrine_link {
