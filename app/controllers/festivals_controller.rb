@@ -1,0 +1,20 @@
+class FestivalsController < ApplicationController
+  def show
+    @festivals = @shrine.festivals.includes(:user,:shrine)
+  end
+  
+  def create
+    @shrine = Shrine.find(params[:shrine_id])
+    if @shrine.festivals.create(shrine_params)
+      redirect_to "/shrines/#{@shrine.id}"
+    else
+      @festivals = @shrine.festivals.includes(:user)
+      render :show
+    end
+  end
+
+  private
+  def shrine_params
+    params.require(:festival).permit(:text, :image).merge(user_id: current_user.id)
+  end  
+end

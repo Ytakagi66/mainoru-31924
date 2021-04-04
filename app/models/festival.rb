@@ -1,6 +1,6 @@
-class Comment < ApplicationRecord
-  has_many :shrine_comments, dependent: :destroy
-  has_many :shrines, through: :shrine_comments, validate: false
+class Festival < ApplicationRecord
+  has_many :shrine_festivals, dependent: :destroy
+  has_many :shrines, through: :shrine_festivals, validate: false
   belongs_to :user
   has_one_attached :image
 
@@ -11,5 +11,5 @@ class Comment < ApplicationRecord
 
   def was_attached?
     self.image.attached?
-  end
+  end  
 end

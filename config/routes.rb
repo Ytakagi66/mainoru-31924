@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     resources :builds, only: [:create, :show]
     resources :histories, only: [:create, :show]
     resources :natures, only: [:create, :show]
-    
+    resources :festivals, only: [:create, :show]
   end
 end

@@ -2,8 +2,8 @@ class Shrine < ApplicationRecord
 
   belongs_to :user
   has_many_attached :images
-  has_many :shrine_comments, dependent: :destroy
-  has_many :comments, through: :shrine_comments, validate: false
+  has_many :shrine_festivals, dependent: :destroy
+  has_many :festivals, through: :shrine_festivals, validate: false
   has_many :shrine_goshuins, dependent: :destroy
   has_many :goshuins, through: :shrine_goshuins, validate: false
   has_many :shrine_builds, dependent: :destroy

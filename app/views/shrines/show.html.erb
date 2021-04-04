@@ -37,7 +37,7 @@
     </div>
 
 <div id="wrap">
-  <div id="tab1" class="tab selected">すべて</div>
+  <div id="tab1" class="tab selected">祭り</div>
   <div id="tab2" class="tab">御朱印</div>
   <div id="tab3" class="tab">建築物</div>
   <div id="tab4" class="tab">自然</div>
@@ -50,7 +50,7 @@
         <div class = 'shrine_comments'>
             <div class="shrine_comment_content">
               <h4>＜コメント一覧＞</h4>
-              <%= render partial: 'comment', collection: @comments %>
+              <%= render partial: 'festival', collection: @festivals %>
             </div>
         </div>
       </div>

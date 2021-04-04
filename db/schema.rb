@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_30_123941) do
+ActiveRecord::Schema.define(version: 2021_04_04_101633) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -42,12 +42,13 @@ ActiveRecord::Schema.define(version: 2021_03_30_123941) do
     t.index ["user_id"], name: "index_builds_on_user_id"
   end
 
-  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "festivals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
     t.text "text"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_comments_on_user_id"
+    t.index ["user_id"], name: "index_festivals_on_user_id"
   end
 
   create_table "goshuins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -86,13 +87,13 @@ ActiveRecord::Schema.define(version: 2021_03_30_123941) do
     t.index ["shrine_id"], name: "index_shrine_builds_on_shrine_id"
   end
 
-  create_table "shrine_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "shrine_festivals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "shrine_id", null: false
-    t.bigint "comment_id", null: false
+    t.bigint "festival_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["comment_id"], name: "index_shrine_comments_on_comment_id"
-    t.index ["shrine_id"], name: "index_shrine_comments_on_shrine_id"
+    t.index ["festival_id"], name: "index_shrine_festivals_on_festival_id"
+    t.index ["shrine_id"], name: "index_shrine_festivals_on_shrine_id"
   end
 
   create_table "shrine_goshuins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -162,14 +163,14 @@ ActiveRecord::Schema.define(version: 2021_03_30_123941) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "builds", "users"
-  add_foreign_key "comments", "users"
+  add_foreign_key "festivals", "users"
   add_foreign_key "goshuins", "users"
   add_foreign_key "histories", "users"
   add_foreign_key "natures", "users"
   add_foreign_key "shrine_builds", "builds"
   add_foreign_key "shrine_builds", "shrines"
-  add_foreign_key "shrine_comments", "comments"
-  add_foreign_key "shrine_comments", "shrines"
+  add_foreign_key "shrine_festivals", "festivals"
+  add_foreign_key "shrine_festivals", "shrines"
   add_foreign_key "shrine_goshuins", "goshuins"
   add_foreign_key "shrine_goshuins", "shrines"
   add_foreign_key "shrine_histories", "histories"

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ShrineCommentTest < ActiveSupport::TestCase
+class FestivalTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
