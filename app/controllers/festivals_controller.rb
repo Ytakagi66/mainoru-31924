@@ -1,4 +1,11 @@
 class FestivalsController < ApplicationController
+  def index
+    @shrine = Shrine.find(params[:shrine_id])
+    @shrines = Shrine.all
+    @festival = @shrine.festivals.new
+    @festivals = @shrine.festivals.all
+  end
+
   def show
     @festivals = @shrine.festivals.includes(:user,:shrine)
   end

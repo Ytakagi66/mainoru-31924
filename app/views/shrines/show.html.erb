@@ -1,15 +1,7 @@
 <div class = 'shrine_show'>
-  <div id= 'shrine_nav'>
+  <div id= 'nav'>
   <h1>その他の神社</h1>
-    <ul>
-      <li>
-        <% @shrines.each do |shrine| %>
-          <%= link_to shrine_path(shrine.id), class:'shrine_link' do %>
-            <%= shrine.name %>
-          <% end %>
-        <% end %>
-      </li>
-    </ul>
+    <%= render 'nav' %>
   </div>
   <div class = 'show_main'>
 
@@ -71,6 +63,7 @@
             <div class = "shrine_comments">
               <div class="shrine_comment_content">
                 <h4>＜コメント一覧＞</h4>
+                
                 <%= form_with( model: [@shrine, @goshuin], class: 'form', local: true) do |f| %>
                   <div class="form-input">
                     <%= f.text_field :text, class: 'form-comment', placeholder: 'コメント' %>
@@ -80,7 +73,7 @@
                     </label>
                   </div>
                   <%= f.submit '送信', class: 'form-submit' %>
-                <% end %>          
+                <% end %>
                 <%= render partial: 'goshuin', collection: @goshuins %>
               </div>
             </div>
