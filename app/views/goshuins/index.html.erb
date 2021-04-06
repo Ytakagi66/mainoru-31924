@@ -8,7 +8,7 @@
 
     <%# 中央：コメント表示欄 %>
     <div class='goshuin_comment'>
-      <h1 class="title"><span class='title_span'><%= @shrine.name %></span>のお祭り</h1>
+      <h1 class="title"><span class='title_span'><%= @shrine.name %></span>の御朱印</h1>
       <div class='comments'>
         <%= render partial: 'comments/goshuin', collection: @goshuins %>
       </div>
