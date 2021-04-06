@@ -55,6 +55,7 @@
                 <div class="shrine_comment_content">
                   <h4>コメント一覧</h4>
                   <%= render partial: 'festival', collection: @festivals %>
+                  <%= link_to "もっと見る", "/shrines/#{@shrine.id}/festivals" %>
                 </div>
             </div>
           </div>
@@ -65,6 +66,7 @@
                 <div class="shrine_comment_content">
                   <h4>コメント一覧</h4>
                   <%= render partial: 'goshuin', collection: @goshuins %>
+                  <%= link_to "もっと見る", "/shrines/#{@shrine.id}/goshuins" %>
                 </div>
             </div>
           </div>
@@ -75,6 +77,7 @@
                 <div class="shrine_comment_content">
                   <h4>コメント一覧</h4>
                   <%= render partial: 'build', collection: @builds %>
+                  <%= link_to "もっと見る", "/shrines/#{@shrine.id}/builds" %>
                 </div>
             </div>
           </div>
@@ -85,6 +88,7 @@
                 <div class="shrine_comment_content">
                   <h4>コメント一覧</h4>
                   <%= render partial: 'nature', collection: @natures %>
+                  <%= link_to "もっと見る", "/shrines/#{@shrine.id}/natures" %>
                 </div>
             </div>
           </div>
@@ -95,6 +99,7 @@
                 <div class="shrine_comment_content">
                   <h4>コメント一覧</h4>
                   <%= render partial: 'history', collection: @histories %>
+                  <%= link_to "もっと見る", "/shrines/#{@shrine.id}/histories" %>
                 </div>
             </div>
           </div>
