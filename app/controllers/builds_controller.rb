@@ -3,11 +3,11 @@ class BuildsController < ApplicationController
     @shrine = Shrine.find(params[:shrine_id])
     @shrines = Shrine.all
     @build = @shrine.builds.new
-    @builds = @shrine.builds.all.page(params[:page]).per(10)
+    @shrineBuilds = @shrine.builds.all.page(params[:page]).per(10)
   end
 
   def show
-    @builds = @shrine.builds.includes(:user,:shrine)
+    @shrineBuilds = @shrine.builds.includes(:user,:shrine)
   end
   
   def create

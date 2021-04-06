@@ -1,0 +1,113 @@
+<div class = 'temple_show'>
+  <div id= 'nav'>
+  <h1>その他の神社</h1>
+    <%= render 'nav' %>
+  </div>
+  <div class = 'show_main'>
+
+    <div class = 'temple_name'>
+      <%= @temple.name %>
+    </div>
+
+    <%# 神社画像の表示 %>
+    <div class = 'show_image'>
+      <%= render 'swiper'%>
+    </div>
+
+    <%# 神社情報の表示 %>
+    <div class = 'show_info'>
+      <div class = 'guide'>
+      <h1>神社について</h1>
+        <table>
+          <tr>
+            <%# <td class = 'info'>説明</td> %>
+            <td colspan="2", class='temple_info'><%= @temple.info %></td>
+          </tr>
+          <tr>
+            <td>住所</td>
+            <td><%= @temple.address %></td>
+          </tr>
+          <tr>
+            <td>ご利益</td>
+            <td><%= @temple.benefits.name %></td>
+          </tr>                 
+        </table>
+      </div>
+
+      <%# 神社の所在地を示す地図の表示 %>
+      <div class = 'temple_map'>
+        <div id="map" data-json="<%= @temple.to_json %>"></div>
+      </div>    
+    </div>
+
+    <div id="wrap">
+      <div id="tab1" class="tab selected">祭り</div>
+      <div id="tab2" class="tab">御朱印</div>
+      <div id="tab3" class="tab">建築物</div>
+      <div id="tab4" class="tab">自然</div>
+      <div id="tab5" class="tab">歴史</div>
+
+      <div id="container">
+        <div id="slide" class="">
+          <div id="first" class="box">
+            <%# 神社の祭りのコメント欄（top10） %>
+            <div class = 'temple_comments'>
+                <div class="temple_comment_content">
+                  <h4>コメント一覧</h4>
+                  <%= render partial: 'festival', collection: @shrineFestivals %>
+                  <%= link_to "もっと見る", "/temples/#{@temple.id}/festivals" %>
+                </div>
+            </div>
+          </div>
+
+          <div id="second" class="box">
+          <%# 神社の御朱印のコメント欄（top10） %>
+            <div class = 'temple_comments'>
+                <div class="temple_comment_content">
+                  <h4>コメント一覧</h4>
+                  <%= render partial: 'goshuin', collection: @shrineGoshuins %>
+                  <%= link_to "もっと見る", "/temples/#{@temple.id}/goshuins" %>
+                </div>
+            </div>
+          </div>
+
+          <div id="third" class="box">
+          <%# 神社の祭りのコメント欄（top10） %>
+            <div class = 'temple_comments'>
+                <div class="temple_comment_content">
+                  <h4>コメント一覧</h4>
+                  <%= render partial: 'build', collection: @shrineBuilds %>
+                  <%= link_to "もっと見る", "/temples/#{@temple.id}/builds" %>
+                </div>
+            </div>
+          </div>
+
+          <div id="four" class="box">
+          <%# 神社の祭りのコメント欄（top10） %>
+            <div class = 'temple_comments'>
+                <div class="temple_comment_content">
+                  <h4>コメント一覧</h4>
+                  <%= render partial: 'nature', collection: @shrineNatures %>
+                  <%= link_to "もっと見る", "/temples/#{@temple.id}/natures" %>
+                </div>
+            </div>
+          </div>
+          
+          <div id="five" class="box">
+          <%# 神社の祭りのコメント欄（top10） %>
+            <div class = 'temple_comments'>
+                <div class="temple_comment_content">
+                  <h4>コメント一覧</h4>
+                  <%= render partial: 'history', collection: @shrineHistories %>
+                  <%= link_to "もっと見る", "/temples/#{@temple.id}/histories" %>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+<script src="//unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script async src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap"></script>

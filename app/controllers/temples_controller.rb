@@ -1,11 +1,11 @@
 class TemplesController < ApplicationController
   def index
-    @temples = Shrine.all
+    @temples = Temple.all
   end
 
   def show
-    @temple = Shrine.find(params[:id])
-    @temples = Shrine.all.limit(20).order(id: "DESC")
+    @temple = Temple.find(params[:id])
+    @temples = Temple.all.limit(20).order(id: "DESC")
     @temple_json = @temple.to_json
     @festival = @temple.festivals.new
     @festivals = @temple.festivals.all.limit(10).order(id: "DESC")
@@ -20,11 +20,11 @@ class TemplesController < ApplicationController
   end
 
   def new
-    @temple = Shrine.new
+    @temple = Temple.new
   end
 
   def create
-    @temple = Shrine.new(temple_params)
+    @temple = Temple.new(temple_params)
     if @temple.save
       redirect_to root_path
     else

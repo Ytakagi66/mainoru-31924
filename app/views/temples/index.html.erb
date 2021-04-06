@@ -1,0 +1,21 @@
+<div class = 'temple_index_page'>
+  <%= image_tag '下関住吉神社本殿.jpeg', class: 'photo' %>
+  <div class='list'>
+    <div id='temple_tori'>
+      <%= image_tag '神社の鳥居.png', class:'temple_tori_image' %>
+      <h1>寺院一覧</h1>
+    </div>
+    <div id='temple_contents'>
+      <ul>
+        <% @temples.each do |temple| %>
+        <%= link_to temple_path(temple.id), class:'temple_link' do %>
+          <div class='content'>
+            <li class='name'><%= temple.name %></li>
+            <li><%= image_tag temple.images.first, class: 'first_image' %></li>
+          </div>
+        <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

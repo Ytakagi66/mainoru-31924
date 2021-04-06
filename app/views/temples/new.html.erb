@@ -1,0 +1,85 @@
+<div class="temples-sell-contents">
+  <header class="temples-sell-header">
+    <%= link_to image_tag('mainoru-logo-color.png' , size: '185x50'), "/" %>
+
+  </header>
+  <div class="temples-sell-main">
+    <h2 class="temples-sell-title">寺院の情報を入力</h2>
+    <%= form_with(model:@temple, id: 'temple-form', local: true) do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <%# 投稿画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        寺院の画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <label class='image_update_label'>
+        <div id='image_preview'></div>
+        <div id="image-list">
+
+        </div> 
+        <div class = 'input_temple'>
+          <%= f.file_field :image, multiple: true, name: 'temple[images][]', id: 'temple_image' %>
+          <span><i class="fas fa-camera"></i></span>
+        </div>
+      </div>
+    </label>
+    </div>
+
+    <%# 商品名と商品説明 %>
+    <div class="new-temples">
+      <div class="weight-bold-text">
+        寺院名
+        <span class="indispensable">必須</span>
+      </div>
+    <%= f.text_area :name, class:"temples-text", id:"temple-name", placeholder:"寺院名（必須 40文字まで)", maxlength:"40" %>
+
+      <div class="weight-bold-text">
+        寺院の説明
+        <span class="indispensable">必須</span>
+      </div>
+    <%= f.text_area :info, class:"temples-text", id:"temple-info", placeholder:"寺院の説明（必須 1,000文字まで）（歴史、創建、文化財登録情報、自然など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+
+      <div class="weight-bold-text">
+        ご利益
+        <span class="indispensable">必須</span>
+      </div>
+    <%= f.collection_select(:benefits_id, Benefits.all, :id, :name, {}, {class:"select-box", id:"temple-benefits"}) %>
+
+    <%# 寺院の住所 %>
+      <div class="weight-bold-text">
+        住所
+        <span class="indispensable">必須</span>
+      </div>
+    <%= f.text_area :address, class:"temples-text", id:"temple-address", placeholder:"1-2-2" ,maxlength:"1000" %>
+    
+  </div>
+
+  <%# 下部ボタン %>
+  <div class="sell-btn-contents">
+    <%= f.submit "投稿する" ,class:"sell-btn" %>
+    <%=link_to 'もどる', root_path, class:"back-btn" %>
+  </div>
+</div>
+
+<% end %>
+<footer class="items-sell-footer">
+  <ul class="menu">
+    <li><a href="#">プライバシーポリシー</a></li>
+    <li><a href="#">フリマ利用規約</a></li>
+    <li><a href="#">特定商取引に関する表記</a></li>
+  </ul>
+  <%= link_to image_tag('mainoru-logo-color.png' , size: '185x50'), "/" %>
+  <p class="inc">
+    ©︎Mainoru,Inc.
+  </p>
+</footer>
+</div>
+
+<script src="https://maps.google.com/maps/api/js?v=3&key=AIzaSyDyadiU2YaDtGtxz6KHPYO_CHRG42Ji26g"></script>
