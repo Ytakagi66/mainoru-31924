@@ -1,0 +1,18 @@
+  <div id= 'info' class= 'build_info'>
+      <table>
+        <tr>
+          <td class='name'><%= @shrine.name %></td>
+        </tr>      
+        <tr>
+          <td colspan="2", class='shrine_info'><%= @shrine.info %></td>
+        </tr>
+        <tr>
+          <td>住所</td>
+          <td><%= @shrine.address %></td>
+        </tr>
+        <tr>
+          <td>ご利益</td>
+          <td><%= @shrine.benefits.name %></td>
+        </tr>                 
+      </table>
+  </div>

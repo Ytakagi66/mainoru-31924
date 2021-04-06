@@ -1,4 +1,4 @@
-function comment (){
+function festival (){
   $("#tab1").click(moveToFirst);
   $("#tab2").click(moveToSecond);
   $("#tab3").click(moveToThird);
@@ -37,4 +37,4 @@ function comment (){
 }
 
 
-window.addEventListener('load', comment);
+window.addEventListener('load', festival);

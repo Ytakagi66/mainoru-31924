@@ -1,0 +1,99 @@
+// Place all the styles related to the festivals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.festival_main {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  background-color: rgb(232, 232, 233);
+
+  #nav {
+    width: 20%;
+    height: 100%;
+  }
+
+  .title {
+    font-family: '源ノ明朝';
+    font-size: 25px;
+
+    .title_span {
+      font-family: '源ノ明朝';
+      font-size: 45px;
+    }
+  }
+}
+
+// コメントの表示
+.festival_comment {
+  width: 50%;
+  height: 100%;
+  padding: 15px;
+
+  .comments {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    background-color: #fff;
+  }
+
+  .title {
+    font-family: '源ノ明朝';
+    font-size: 25px;
+  }
+
+  .name {
+    color: #EB6101;
+  }
+
+  .comment_preview {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding: 15px;
+
+    .comment_image {
+      border: #000 1px solid;
+    }
+  }
+
+  .form {
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+
+    .top_row {
+      display: flex;
+    }    
+
+    .Lower_row {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+
+
+}
+
+// 神社情報の表示
+.festival_info {
+}
+
+#info {
+  width: 30%;
+  height: 100%;
+  border: #000 1px solid;
+  box-shadow: 6px 6px rgb(136, 132, 132); 
+  position: sticky;
+  top: 111.25;
+  margin: 20px;
+  padding: 20px;
+
+  td {
+    padding:20px 20px 20px 0;
+  }
+
+  .name {
+    font-size: 25px;
+  }
+}

@@ -1,6 +1,7 @@
-class CreateComments < ActiveRecord::Migration[6.0]
+class CreateFestivals < ActiveRecord::Migration[6.0]
   def change
-    create_table :comments do |t|
+    create_table :festivals do |t|
+      t.string :title
       t.text :text
       t.references :user, foreign_key: true, null: false
       t.timestamps

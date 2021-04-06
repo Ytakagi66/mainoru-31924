@@ -1,0 +1,23 @@
+<div class= "festival_main">
+
+  <%# 左側：神社一覧情報 %>
+  <div id= 'nav'>
+  <h1>神社一覧</h1>
+    <%= render 'shrines/nav' %>
+  </div>
+
+    <%# 中央：コメント表示欄 %>
+    <div class='festival_comment'>
+      <h1 class="title"><span class='title_span'><%= @shrine.name %></span>のお祭り</h1>
+      <div class='comments'>
+        <%= render partial: 'comments/festival', collection: @festivals %>
+      </div>
+      <%= paginate @festivals %>
+      <%= render partial: 'comments/festivalComment' %>
+    </div>
+
+  <%# 右側：神社説明欄 %>
+  <%= render partial: 'comments/festivalInfo' %>
+</div>
+
+<script type="text/javascript" src="shrines/show"></script>

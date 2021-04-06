@@ -1,11 +1,22 @@
-<div class = 'shrine_index'>
-  <ul>
-    <% if @shrine.present? %>
-      <%= @shrines.each do |shrine| %>
-        <li><%= shrine.content %></li>
-      <% end %>
-    <% else %>
-      <%= image_tag '大嘗宮.jpg', class: "item-img" %>
-    <% end %>
-  </ul>
+<div class = 'shrine_index_page'>
+  <%= image_tag '下関住吉神社本殿.jpeg', class: 'photo' %>
+  <div class='list'>
+    <div id='shrine_tori'>
+      <%= image_tag '神社の鳥居.png', class:'shrine_tori_image' %>
+      <h1>神社一覧</h1>
+    </div>
+    <div id='shrine_contents'>
+      <ul>
+        <% @shrines.each do |shrine| %>
+        <%= link_to shrine_path(shrine.id), class:'shrine_link' do %>
+          <div class='content'>
+            <li class='name'><%= shrine.name %></li>
+            <li><%= image_tag shrine.images.first, class: 'first_image' %></li>
+            <%# <li class='address'><%= shrine.address</li> %>
+          </div>
+        <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
