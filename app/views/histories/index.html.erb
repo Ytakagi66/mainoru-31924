@@ -2,22 +2,45 @@
 
   <%# 左側：神社一覧情報 %>
   <div id= 'nav'>
+  <% if params[:shrine_id] %>
   <h1>神社一覧</h1>
     <%= render 'shrines/nav' %>
+  <% elsif params[:temple_id] %>
+  <h1>寺院一覧</h1>
+    <%= render 'temples/nav' %>
+  <% end %>
   </div>
 
     <%# 中央：コメント表示欄 %>
     <div class='history_comment'>
-      <h1 class="title"><span class='title_span'><%= @shrine.name %></span>の歴史</h1>
+    <% if params[:shrine_id] %>
+      <h1 class="title"><span class='title_span'><%= @shrine.name %></span>のお祭り</h1>
+    <% elsif params[:temple_id] %>
+      <h1 class="title"><span class='title_span'><%= @temple.name %></span>のお祭り</h1>
+    <% end %>
+    
       <div class='comments'>
-        <%= render partial: 'comments/history', collection: @histories %>
+      <% if params[:shrine_id] %>
+        <%= render partial: 'shrineComments/history', collection: @histories %>
+      <% elsif params[:temple_id] %>
+        <%= render partial: 'templeComments/history', collection: @histories %>
+      <% end %>
       </div>
       <%= paginate @histories %>
-      <%= render partial: 'comments/historyComment' %>
+
+      <% if params[:shrine_id] %>
+        <%= render partial: 'shrineComments/historyComment' %>
+      <% elsif params[:temple_id] %>
+        <%= render partial: 'templeComments/historyComment' %>
+      <% end %>
     </div>
 
   <%# 右側：神社説明欄 %>
-  <%= render partial: 'comments/historyInfo' %>
+  <% if params[:shrine_id] %>
+  <%= render partial: 'shrineComments/historyInfo' %>
+  <% elsif params[:temple_id] %>
+  <%= render partial: 'templeComments/historyInfo' %>
+  <% end %>
 </div>
 
 <script type="text/javascript" src="shrines/show"></script>

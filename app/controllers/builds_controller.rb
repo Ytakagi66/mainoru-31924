@@ -1,27 +1,51 @@
 class BuildsController < ApplicationController
   def index
-    @shrine = Shrine.find(params[:shrine_id])
-    @shrines = Shrine.all
-    @build = @shrine.builds.new
-    @shrineBuilds = @shrine.builds.all.page(params[:page]).per(10)
+    if params[:shrine_id]
+      @shrine = Shrine.find(params[:shrine_id])
+      @shrines = Shrine.all
+      @build = @shrine.builds.new
+      @builds = @shrine.builds.all.page(params[:page]).per(10)
+    else
+      @temple = Temple.find(params[:temple_id])
+      @temples = Temple.all
+      @build = @temple.builds.new
+      @builds = @temple.builds.all.page(params[:page]).per(10)
+    end
   end
 
   def show
-    @shrineBuilds = @shrine.builds.includes(:user,:shrine)
+    if params[:shrine_id]
+      @builds = @shrine.builds.includes(:user,:shrine)
+    else
+      @builds = @temple.builds.includes(:user,:temple)
+    end
   end
   
   def create
-    @shrine = Shrine.find(params[:shrine_id])
-    if @shrine.builds.create(shrine_params)
-      redirect_to "/shrines/#{@shrine.id}"
+    if params[:shrine_id]
+      @shrine = Shrine.find(params[:shrine_id])
+      if @shrine.builds.create(shrine_params)
+        redirect_to "/shrines/#{@shrine.id}"
+      else
+        @builds = @shrine.builds.includes(:user)
+        render :show
+      end
     else
-      @builds = @shrine.builds.includes(:user)
-      render :show
+      @temple = Temple.find(params[:temple_id])
+      if @temple.builds.create(temple_params)
+        redirect_to "/temples/#{@temple.id}"
+      else
+        @builds = @temple.builds.includes(:user)
+        render :show
+      end
     end
   end
 
   private
   def shrine_params
+    params.require(:build).permit(:title, :text, :image).merge(user_id: current_user.id)
+  end  
+  def temple_params
     params.require(:build).permit(:title, :text, :image).merge(user_id: current_user.id)
   end  
 end

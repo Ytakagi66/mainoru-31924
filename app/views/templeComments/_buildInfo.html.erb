@@ -1,0 +1,18 @@
+  <div id= 'info' class= 'build_info'>
+      <table>
+        <tr>
+          <td class='name'><%= @temple.name %></td>
+        </tr>      
+        <tr>
+          <td colspan="2", class='temple_info'><%= @temple.info %></td>
+        </tr>
+        <tr>
+          <td>住所</td>
+          <td><%= @temple.address %></td>
+        </tr>
+        <tr>
+          <td>ご利益</td>
+          <td><%= @temple.benefits.name %></td>
+        </tr>                 
+      </table>
+  </div>

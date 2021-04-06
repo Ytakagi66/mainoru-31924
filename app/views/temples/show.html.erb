@@ -1,7 +1,7 @@
 <div class = 'temple_show'>
   <div id= 'nav'>
-  <h1>その他の神社</h1>
-    <%= render 'nav' %>
+  <h1>その他の寺院</h1>
+    <%= render 'temples/nav' %>
   </div>
   <div class = 'show_main'>
 
@@ -9,15 +9,15 @@
       <%= @temple.name %>
     </div>
 
-    <%# 神社画像の表示 %>
+    <%# 寺院画像の表示 %>
     <div class = 'show_image'>
       <%= render 'swiper'%>
     </div>
 
-    <%# 神社情報の表示 %>
+    <%# 寺院情報の表示 %>
     <div class = 'show_info'>
       <div class = 'guide'>
-      <h1>神社について</h1>
+      <h1>寺院について</h1>
         <table>
           <tr>
             <%# <td class = 'info'>説明</td> %>
@@ -34,7 +34,7 @@
         </table>
       </div>
 
-      <%# 神社の所在地を示す地図の表示 %>
+      <%# 寺院の所在地を示す地図の表示 %>
       <div class = 'temple_map'>
         <div id="map" data-json="<%= @temple.to_json %>"></div>
       </div>    
@@ -50,55 +50,55 @@
       <div id="container">
         <div id="slide" class="">
           <div id="first" class="box">
-            <%# 神社の祭りのコメント欄（top10） %>
+            <%# 寺院の祭りのコメント欄（top10） %>
             <div class = 'temple_comments'>
                 <div class="temple_comment_content">
                   <h4>コメント一覧</h4>
-                  <%= render partial: 'festival', collection: @shrineFestivals %>
+                  <%= render partial: 'festival', collection: @festivals %>
                   <%= link_to "もっと見る", "/temples/#{@temple.id}/festivals" %>
                 </div>
             </div>
           </div>
 
           <div id="second" class="box">
-          <%# 神社の御朱印のコメント欄（top10） %>
+          <%# 寺院の御朱印のコメント欄（top10） %>
             <div class = 'temple_comments'>
                 <div class="temple_comment_content">
                   <h4>コメント一覧</h4>
-                  <%= render partial: 'goshuin', collection: @shrineGoshuins %>
+                  <%= render partial: 'goshuin', collection: @goshuins %>
                   <%= link_to "もっと見る", "/temples/#{@temple.id}/goshuins" %>
                 </div>
             </div>
           </div>
 
           <div id="third" class="box">
-          <%# 神社の祭りのコメント欄（top10） %>
+          <%# 寺院の祭りのコメント欄（top10） %>
             <div class = 'temple_comments'>
                 <div class="temple_comment_content">
                   <h4>コメント一覧</h4>
-                  <%= render partial: 'build', collection: @shrineBuilds %>
+                  <%= render partial: 'build', collection: @builds %>
                   <%= link_to "もっと見る", "/temples/#{@temple.id}/builds" %>
                 </div>
             </div>
           </div>
 
           <div id="four" class="box">
-          <%# 神社の祭りのコメント欄（top10） %>
+          <%# 寺院の祭りのコメント欄（top10） %>
             <div class = 'temple_comments'>
                 <div class="temple_comment_content">
                   <h4>コメント一覧</h4>
-                  <%= render partial: 'nature', collection: @shrineNatures %>
+                  <%= render partial: 'nature', collection: @natures %>
                   <%= link_to "もっと見る", "/temples/#{@temple.id}/natures" %>
                 </div>
             </div>
           </div>
           
           <div id="five" class="box">
-          <%# 神社の祭りのコメント欄（top10） %>
+          <%# 寺院の祭りのコメント欄（top10） %>
             <div class = 'temple_comments'>
                 <div class="temple_comment_content">
                   <h4>コメント一覧</h4>
-                  <%= render partial: 'history', collection: @shrineHistories %>
+                  <%= render partial: 'history', collection: @histories %>
                   <%= link_to "もっと見る", "/temples/#{@temple.id}/histories" %>
                 </div>
             </div>
