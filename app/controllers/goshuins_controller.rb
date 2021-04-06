@@ -1,4 +1,11 @@
 class GoshuinsController < ApplicationController
+  def index
+    @shrine = Shrine.find(params[:shrine_id])
+    @shrines = Shrine.all
+    @goshuin = @shrine.goshuins.new
+    @goshuins = @shrine.goshuins.all.page(params[:page]).per(10)
+  end
+
   def show
     @goshuins = @shrine.goshuins.includes(:user,:shrine)
   end
@@ -16,5 +23,5 @@ class GoshuinsController < ApplicationController
   private
   def shrine_params
     params.require(:goshuin).permit(:title, :text, :image).merge(user_id: current_user.id)
-  end
+  end  
 end
