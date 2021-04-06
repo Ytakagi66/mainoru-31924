@@ -1,0 +1,19 @@
+<%# コメントフォーム %>
+<div class="form">
+  <div class='top_row'>
+  <%= form_with( model: [@shrine, @festival], class: 'form', local: true) do |f| %>
+  <label class="title">題名</label>
+  <%= f.text_field :title, class:"form-text", id:"form-name", placeholder:"題名（必須 40文字まで)", maxlength:"40" %>
+  </div>
+  
+  <%= f.text_area :text, class: 'form-comment', placeholder: 'コメント',rows:"7" ,maxlength:"1000" %>
+
+  <div class= 'Lower_row'>
+    <label class="form-image">
+      <span class="image-file">画像</span>
+      <%= f.file_field :image, class: 'hidden' %>
+    </label>
+    <%= f.submit '送信', class: 'form-submit' %>
+  </div>
+  <% end %>
+</div>

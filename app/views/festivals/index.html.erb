@@ -6,45 +6,17 @@
     <%= render 'shrines/nav' %>
   </div>
 
-  <%# 中央：コメント表示欄 %>
-  <div class='festival_comment'>
-
-    <h1 class="title"><span class='title_span'><%= @shrine.name %></span>の御朱印</h1>
-    <%= render partial: 'shrines/festival', collection: @festivals %>
-
-    <div class='comment_form'>
-      <%= form_with( model: [@shrine, @festival], class: 'form', local: true) do |f| %>
-    </div>
-    <div class="form-input">
-      <div class='text_area'>
-        <%= f.text_area :text, class: 'form-comment', placeholder: 'コメント',rows:"7" ,maxlength:"1000" %>
-        <%= f.submit '送信', class: 'form-submit' %>
+    <%# 中央：コメント表示欄 %>
+    <div class='festival_comment'>
+      <h1 class="title"><span class='title_span'><%= @shrine.name %></span>のお祭り</h1>
+      <div class='comments'>
+        <%= render partial: 'comments/festival', collection: @festivals %>
       </div>
-      <label class="form-image">
-        <span class="image-file">画像</span>
-        <%= f.file_field :image, class: 'hidden' %>
-      </label>
-    <% end %>            
+      <%= render partial: 'comments/festivalComment' %>
     </div>
-  </div>
 
   <%# 右側：神社説明欄 %>
-  <div id= 'info' class= 'festival_info'>
-      <table>
-        <tr>
-          <td colspan="2", class='shrine_info'><%= @shrine.info %></td>
-        </tr>
-        <tr>
-          <td>住所</td>
-          <td><%= @shrine.address %></td>
-        </tr>
-        <tr>
-          <td>ご利益</td>
-          <td><%= @shrine.benefits.name %></td>
-        </tr>                 
-      </table>
-    </div>
-  </div>
+  <%= render partial: 'comments/festivalInfo' %>
 </div>
 
 <script type="text/javascript" src="shrines/show"></script>
