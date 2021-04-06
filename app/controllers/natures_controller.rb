@@ -1,4 +1,11 @@
 class NaturesController < ApplicationController
+  def index
+    @shrine = Shrine.find(params[:shrine_id])
+    @shrines = Shrine.all
+    @nature = @shrine.natures.new
+    @natures = @shrine.natures.all.page(params[:page]).per(10)
+  end
+
   def show
     @natures = @shrine.natures.includes(:user,:shrine)
   end
@@ -16,5 +23,5 @@ class NaturesController < ApplicationController
   private
   def shrine_params
     params.require(:nature).permit(:title, :text, :image).merge(user_id: current_user.id)
-  end    
+  end  
 end
