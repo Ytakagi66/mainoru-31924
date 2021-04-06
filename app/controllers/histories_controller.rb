@@ -1,4 +1,11 @@
 class HistoriesController < ApplicationController
+  def index
+    @shrine = Shrine.find(params[:shrine_id])
+    @shrines = Shrine.all
+    @history = @shrine.histories.new
+    @histories = @shrine.histories.all.page(params[:page]).per(10)
+  end
+
   def show
     @histories = @shrine.histories.includes(:user,:shrine)
   end
@@ -16,5 +23,5 @@ class HistoriesController < ApplicationController
   private
   def shrine_params
     params.require(:history).permit(:title, :text, :image).merge(user_id: current_user.id)
-  end
+  end  
 end
