@@ -9,6 +9,7 @@
 
   #nav {
     width: 20%;
+    height: 100%;
   }
 
   .title {
@@ -33,6 +34,15 @@
     height: 100%;
     flex-direction: column;
     background-color: #fff;
+  }
+
+  .title {
+    font-family: '源ノ明朝';
+    font-size: 25px;
+  }
+
+  .name {
+    color: #EB6101;
   }
 
   .comment_preview {
@@ -80,6 +90,10 @@
   padding: 20px;
 
   td {
-    padding:20px 0;
+    padding:20px 20px 20px 0;
+  }
+
+  .name {
+    font-size: 25px;
   }
 }

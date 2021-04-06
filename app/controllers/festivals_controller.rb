@@ -3,7 +3,7 @@ class FestivalsController < ApplicationController
     @shrine = Shrine.find(params[:shrine_id])
     @shrines = Shrine.all
     @festival = @shrine.festivals.new
-    @festivals = @shrine.festivals.all
+    @festivals = @shrine.festivals.all.page(params[:page]).per(10)
   end
 
   def show
@@ -22,6 +22,6 @@ class FestivalsController < ApplicationController
 
   private
   def shrine_params
-    params.require(:festival).permit(:text, :image).merge(user_id: current_user.id)
+    params.require(:festival).permit(:title, :text, :image).merge(user_id: current_user.id)
   end  
 end

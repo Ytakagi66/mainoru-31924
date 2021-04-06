@@ -50,89 +50,52 @@
       <div id="container">
         <div id="slide" class="">
           <div id="first" class="box">
-            <%# この神社についてのコメント欄 %>
+            <%# 神社の祭りのコメント欄（top10） %>
             <div class = 'shrine_comments'>
                 <div class="shrine_comment_content">
-                  <h4>＜コメント一覧＞</h4>
+                  <h4>コメント一覧</h4>
                   <%= render partial: 'festival', collection: @festivals %>
                 </div>
             </div>
           </div>
 
           <div id="second" class="box">
-            <div class = "shrine_comments">
-              <div class="shrine_comment_content">
-                <h4>＜コメント一覧＞</h4>
-                
-                <%= form_with( model: [@shrine, @goshuin], class: 'form', local: true) do |f| %>
-                  <div class="form-input">
-                    <%= f.text_field :text, class: 'form-comment', placeholder: 'コメント' %>
-                    <label class="form-image">
-                      <span class="image-file">画像</span>
-                      <%= f.file_field :image, class: 'hidden' %>
-                    </label>
-                  </div>
-                  <%= f.submit '送信', class: 'form-submit' %>
-                <% end %>
-                <%= render partial: 'goshuin', collection: @goshuins %>
-              </div>
+          <%# 神社の御朱印のコメント欄（top10） %>
+            <div class = 'shrine_comments'>
+                <div class="shrine_comment_content">
+                  <h4>コメント一覧</h4>
+                  <%= render partial: 'goshuin', collection: @goshuins %>
+                </div>
             </div>
           </div>
 
           <div id="third" class="box">
-            <div class = "shrine_comments">
-              <div class="shrine_comment_content">
-                <h4>＜コメント一覧＞</h4>
-                <%= form_with( model: [@shrine, @build], class: 'form', local: true) do |f| %>
-                  <div class="form-input">
-                    <%= f.text_field :text, class: 'form-comment', placeholder: 'コメント' %>
-                    <label class="form-image">
-                      <span class="image-file">画像</span>
-                      <%= f.file_field :image, class: 'hidden' %>
-                    </label>
-                  </div>
-                  <%= f.submit '送信', class: 'form-submit' %>
-                <% end %>          
-                <%= render partial: 'build', collection: @builds %>
-              </div>
-            </div>      
+          <%# 神社の祭りのコメント欄（top10） %>
+            <div class = 'shrine_comments'>
+                <div class="shrine_comment_content">
+                  <h4>コメント一覧</h4>
+                  <%= render partial: 'build', collection: @builds %>
+                </div>
+            </div>
           </div>
 
           <div id="four" class="box">
-            <div class = "shrine_comments">
-              <div class="shrine_comment_content">
-                <h4>＜コメント一覧＞</h4>
-                <%= form_with( model: [@shrine, @nature], class: 'form', local: true) do |f| %>
-                  <div class="form-input">
-                    <%= f.text_field :text, class: 'form-comment', placeholder: 'コメント' %>
-                    <label class="form-image">
-                      <span class="image-file">画像</span>
-                      <%= f.file_field :image, class: 'hidden' %>
-                    </label>
-                  </div>
-                  <%= f.submit '送信', class: 'form-submit' %>
-                <% end %>          
-                <%= render partial: 'nature', collection: @natures %>
-              </div>
-            </div>          
+          <%# 神社の祭りのコメント欄（top10） %>
+            <div class = 'shrine_comments'>
+                <div class="shrine_comment_content">
+                  <h4>コメント一覧</h4>
+                  <%= render partial: 'nature', collection: @natures %>
+                </div>
+            </div>
           </div>
           
           <div id="five" class="box">
-            <div class = "shrine_comments">
-              <div class="shrine_comment_content">
-                <h4>＜コメント一覧＞</h4>
-                <%= form_with( model: [@shrine, @history], class: 'form', local: true) do |f| %>
-                  <div class="form-input">
-                    <%= f.text_field :text, class: 'form-comment', placeholder: 'コメント' %>
-                    <label class="form-image">
-                      <span class="image-file">画像</span>
-                      <%= f.file_field :image, class: 'hidden' %>
-                    </label>
-                  </div>
-                  <%= f.submit '送信', class: 'form-submit' %>
-                <% end %>          
-                <%= render partial: 'history', collection: @histories %>
-              </div>
+          <%# 神社の祭りのコメント欄（top10） %>
+            <div class = 'shrine_comments'>
+                <div class="shrine_comment_content">
+                  <h4>コメント一覧</h4>
+                  <%= render partial: 'history', collection: @histories %>
+                </div>
             </div>
           </div>
         </div>

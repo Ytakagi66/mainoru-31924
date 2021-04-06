@@ -12,6 +12,7 @@
       <div class='comments'>
         <%= render partial: 'comments/festival', collection: @festivals %>
       </div>
+      <%= paginate @festivals %>
       <%= render partial: 'comments/festivalComment' %>
     </div>
 

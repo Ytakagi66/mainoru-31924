@@ -1,14 +1,16 @@
 <div class="comment_preview">
   <div class = "comment_image">
+  
     <div class="comment-image comment">
       <!-- 投稿したメッセージ内容を記述する -->
+      <div class='title'><%= festival.title %></div>
       <%= link_to festival.image, 'data-lightbox': @festival.image do %>
       <%= image_tag festival.image.variant(resize: '600x600'), class: 'comment-image' if festival.image.attached? %>
       <% end %>
         <div class = "comment_text">
           <div class="comment-user comment">
             <!-- 投稿したユーザー名情報を出力する -->
-            <%= festival.user.nickname %>
+            <div class='name'><%= festival.user.nickname %></div>
           </div>  
           <div class="comment-content comment">
             <!-- 投稿したメッセージ内容を記述する -->
