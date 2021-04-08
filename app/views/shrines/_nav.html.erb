@@ -2,7 +2,7 @@
   <li>
     <% @shrines.each do |shrine| %>
       <%= link_to shrine_path(shrine.id), class:'shrine_link' do %>
-        <%= shrine.name %>
+      <%= shrine.name %>
       <% end %>
     <% end %>
   </li>

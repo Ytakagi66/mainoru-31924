@@ -1,0 +1,58 @@
+// 概要説明
+.show_info {
+  width: 90%;
+  height: 100%;
+  margin: 15px 0;
+  padding: 15px;
+  background-color: white;
+  display: flex;
+  border: gray 1px solid;
+  box-shadow: 6px 6px rgb(136, 132, 132); 
+}
+
+.guide {
+  width: 70%;
+  height: 100%;
+  margin: 15px;
+
+  h1 {
+    font-size: 30px;
+    border-bottom: rgb(221, 125, 16) 2px solid;
+    width: 200px;
+    margin-bottom: 10px;
+  }
+
+  table, td {
+    border: rgb(136, 132, 132) 1px solid;
+    font-size: 15px;
+  }
+
+  table {
+    width: 97%;
+    box-shadow: 6px 6px rgb(136, 132, 132); 
+  }
+
+  td {
+    padding: 10px;
+  }
+  
+  .info {
+    height: 190px;
+  }
+
+  .temple_info {
+    height: 150px;
+    padding: 10px;
+  }
+
+}
+
+.temple_map {
+  width: 45%;
+  height: 300px;
+  background-color: lightpink;
+
+  #map {
+    height: 100%;
+  }
+}

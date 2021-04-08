@@ -1,0 +1,37 @@
+#nav {
+  width: 15%;
+  height: 100%;
+  background-color: gray;
+  position: sticky;
+  top: 111.25;
+
+  ul {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  h1, li {
+    font-family: '源ノ明朝';
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 25px;
+    color: #EB6101;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+  }
+
+  a {
+    padding: 10px;
+  }
+
+  .temple_link {
+    text-decoration: none;
+    color: #fff;
+  }    
+}

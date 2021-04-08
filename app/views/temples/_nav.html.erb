@@ -1,0 +1,9 @@
+<ul>
+  <li>
+    <% @temples.each do |temple| %>
+      <%= link_to temple_path(temple.id), class:'temple_link' do %>
+        <%= temple.name %>
+      <% end %>
+    <% end %>
+  </li>
+</ul>

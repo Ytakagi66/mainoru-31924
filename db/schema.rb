@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_04_101633) do
+ActiveRecord::Schema.define(version: 2021_04_06_145222) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -144,6 +144,64 @@ ActiveRecord::Schema.define(version: 2021_04_04_101633) do
     t.index ["user_id"], name: "index_shrines_on_user_id"
   end
 
+  create_table "temple_builds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "temple_id", null: false
+    t.bigint "build_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["build_id"], name: "index_temple_builds_on_build_id"
+    t.index ["temple_id"], name: "index_temple_builds_on_temple_id"
+  end
+
+  create_table "temple_festivals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "temple_id", null: false
+    t.bigint "festival_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["festival_id"], name: "index_temple_festivals_on_festival_id"
+    t.index ["temple_id"], name: "index_temple_festivals_on_temple_id"
+  end
+
+  create_table "temple_goshuins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "temple_id", null: false
+    t.bigint "goshuin_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["goshuin_id"], name: "index_temple_goshuins_on_goshuin_id"
+    t.index ["temple_id"], name: "index_temple_goshuins_on_temple_id"
+  end
+
+  create_table "temple_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "temple_id", null: false
+    t.bigint "history_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["history_id"], name: "index_temple_histories_on_history_id"
+    t.index ["temple_id"], name: "index_temple_histories_on_temple_id"
+  end
+
+  create_table "temple_natures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "temple_id", null: false
+    t.bigint "nature_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["nature_id"], name: "index_temple_natures_on_nature_id"
+    t.index ["temple_id"], name: "index_temple_natures_on_temple_id"
+  end
+
+  create_table "temples", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "info", null: false
+    t.integer "benefits_id", null: false
+    t.string "address", null: false
+    t.float "latitude", null: false
+    t.float "longitude", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_temples_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
@@ -179,4 +237,15 @@ ActiveRecord::Schema.define(version: 2021_04_04_101633) do
   add_foreign_key "shrine_natures", "shrines"
   add_foreign_key "shrine_photos", "shrines"
   add_foreign_key "shrines", "users"
+  add_foreign_key "temple_builds", "builds"
+  add_foreign_key "temple_builds", "temples"
+  add_foreign_key "temple_festivals", "festivals"
+  add_foreign_key "temple_festivals", "temples"
+  add_foreign_key "temple_goshuins", "goshuins"
+  add_foreign_key "temple_goshuins", "temples"
+  add_foreign_key "temple_histories", "histories"
+  add_foreign_key "temple_histories", "temples"
+  add_foreign_key "temple_natures", "natures"
+  add_foreign_key "temple_natures", "temples"
+  add_foreign_key "temples", "users"
 end
