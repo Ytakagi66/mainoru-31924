@@ -1,17 +1,9 @@
 <ul>
   <li>
-  <% if current_page?(shrines_path) %>
     <% @shrines.each do |shrine| %>
       <%= link_to shrine_path(shrine.id), class:'shrine_link' do %>
-        <%= shrine.name %>
+      <%= shrine.name %>
       <% end %>
     <% end %>
-  <% elsif current_page?(temples_path) %>
-    <% @temples.each do |temple| %>
-      <%= link_to shrine_path(temple.id), class:'temple_link' do %>
-      <%= temple.name %>
-      <% end %>
-    <% end %>
-  <% end %> 
   </li>
 </ul>

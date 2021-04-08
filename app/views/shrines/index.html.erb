@@ -2,8 +2,15 @@
   <%= image_tag '下関住吉神社本殿.jpeg', class: 'photo' %>
   <div class='list'>
     <div id='shrine_tori'>
-      <%= image_tag '神社の鳥居.png', class:'shrine_tori_image' %>
-      <h1>神社一覧</h1>
+      <div class= 'left_nav'>
+        <%= image_tag '神社の鳥居.png', class:'shrine_tori_image' %>
+        <h1>神社一覧</h1>
+      </div>
+      <div class='right_nav'>
+        <%= link_to new_shrine_path, class:'shrine_link' do %>
+        <h3>神社を紹介する</h3>
+        <% end %>
+      </div>
     </div>
     <div id='shrine_contents'>
       <ul>
@@ -12,7 +19,6 @@
           <div class='content'>
             <li class='name'><%= shrine.name %></li>
             <li><%= image_tag shrine.images.first, class: 'first_image' %></li>
-            <%# <li class='address'><%= shrine.address</li> %>
           </div>
         <% end %>
         <% end %>

@@ -2,8 +2,15 @@
   <%= image_tag '龍安寺石庭.jpeg', class: 'photo' %>
   <div class='list'>
     <div id='temple_tori'>
-      <%= image_tag '神社の鳥居.png', class:'temple_tori_image' %>
-      <h1>寺院一覧</h1>
+      <div class= 'left_nav'>
+        <%= image_tag '鐘.png', class:'temple_tori_image' %>
+        <h1>寺院一覧</h1>
+      </div>
+      <div class='right_nav'>
+        <%= link_to new_temple_path, class:'temple_link' do %>
+        <h3>お寺を紹介する</h3>
+        <% end %>
+      </div>
     </div>
     <div id='temple_contents'>
       <ul>
