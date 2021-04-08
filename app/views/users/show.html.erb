@@ -1,0 +1,26 @@
+<div class='users_main'>
+  <div class='profile'>
+
+  <%# ヘッダー %>
+    <div class='top_header'>
+
+      <%# プロフィール画像 %>
+      <div class='icon'>
+      </div>
+    </div>
+
+    <%# 自己紹介文 %>
+    <div class='info'>
+      <%= @shrines.each do |shrine| %>
+      <% end %>
+    </div>
+
+    <%# これまで訪れた場所の地図 %>
+    <div class='map'>    
+      <div id="users_map" data-json="<%= @shrine.to_json %>"></div>
+    <div>
+
+  </div>
+</div>
+
+<script async src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap"></script>
