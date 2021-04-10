@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/show'
-  resources :users, only: [:show]
   devise_for :users
   root to: "homes#index"
+  resources :users, only: [:show]
   resources :shrines, only: [:index, :new, :create, :show] do
     resources :comments, only: [:create, :show, :index]
     resources :goshuins, only: [:create, :show, :index]

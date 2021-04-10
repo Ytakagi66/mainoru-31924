@@ -4,7 +4,8 @@
     <title>Mainoru31924</title>
     <%= csrf_meta_tags %>
       <%= csp_meta_tag %>
-    <%= include_gon %>
+    <%= include_gon(:init => true) %>
+    <%= Gon::Base.render_data({}) %>      
     <%= stylesheet_link_tag 'application', media: 'all'%>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="//unpkg.com/swiper/swiper-bundle.min.css">
