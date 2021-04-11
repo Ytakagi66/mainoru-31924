@@ -4,10 +4,16 @@
     <%= render 'nav' %>
   </div>
   <div class = 'show_main'>
+    <div class = 'title'>
+      <div class = 'shrine_name'>
+        <%= @shrine.name %>
+      </div>
 
-    <div class = 'shrine_name'>
-      <%= @shrine.name %>
+      <div class = 'shrine_edit'>
+        <%= link_to "神社情報の編集", edit_shrine_path, method: :get, class: "edit-btn" %>
+      </div>
     </div>
+
 
     <%# 神社画像の表示 %>
     <div class = 'show_image'>

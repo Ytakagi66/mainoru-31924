@@ -3,7 +3,7 @@
   
     <div class="comment-image comment">
       <!-- 投稿したメッセージ内容を記述する -->
-      <div class='title'><%= goshuin.title %></div>
+      <div class='title_content'><%= goshuin.title %></div>
       <%= link_to goshuin.image, 'data-lightbox': @goshuin.image do %>
       <%= image_tag goshuin.image.variant(resize: '600x600'), class: 'comment-image' if goshuin.image.attached? %>
       <% end %>

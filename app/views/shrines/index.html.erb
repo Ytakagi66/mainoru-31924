@@ -15,12 +15,12 @@
     <div id='shrine_contents'>
       <ul>
         <% @shrines.each do |shrine| %>
-        <%= link_to shrine_path(shrine.id), class:'shrine_link' do %>
-          <div class='content'>
-            <li class='name'><%= shrine.name %></li>
-            <li><%= image_tag shrine.images.first, class: 'first_image' %></li>
-          </div>
-        <% end %>
+          <%= link_to shrine_path(shrine.id), class:'shrine_link' do %>
+            <div class='content'>
+              <li class='name'><%= shrine.name %></li>
+              <li><%= image_tag shrine.images.first, class: 'first_image' %></li>
+            </div>
+          <% end %>
         <% end %>
       </ul>
     </div>

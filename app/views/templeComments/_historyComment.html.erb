@@ -2,7 +2,6 @@
 <div class="form">
   <div class='top_row'>
   <%= form_with( model: [@temple, @history], class: 'form', local: true) do |f| %>
-  <label class="title">題名</label>
   <%= f.text_field :title, class:"form-text", id:"form-name", placeholder:"題名（必須 40文字まで)", maxlength:"40" %>
   </div>
   

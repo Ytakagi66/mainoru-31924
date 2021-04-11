@@ -1,10 +1,11 @@
 class ShrinesController < ApplicationController
+  before_action :set_shrine, only: [:edit, :show, :update]
+
   def index
     @shrines = Shrine.all
   end
 
   def show
-    @shrine = Shrine.find(params[:id])
     @shrines = Shrine.all.limit(20).order(id: "DESC")
     @shrine_json = @shrine.to_json
     @festival = @shrine.festivals.new
@@ -33,9 +34,24 @@ class ShrinesController < ApplicationController
       end
   end
 
+  def edit
+  end
+
+  def update
+    if @shrine.update(shrine_params)
+      redirect_to shrine_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def shrine_params
     params.require(:shrine).permit(:name, :info, :benefits_id, :address, :latitude, :longitude, images: []).merge(user_id: current_user.id)
+  end
+
+  def set_shrine
+    @shrine = Shrine.find(params[:id])
   end
 end

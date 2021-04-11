@@ -3,7 +3,7 @@
   
     <div class="comment-image comment">
       <!-- 投稿したメッセージ内容を記述する -->
-      <div class='title'><%= nature.title %></div>
+      <div class='title_content'><%= nature.title %></div>
       <%= link_to nature.image, 'data-lightbox': @nature.image do %>
       <%= image_tag nature.image.variant(resize: '600x600'), class: 'comment-image' if nature.image.attached? %>
       <% end %>

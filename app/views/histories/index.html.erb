@@ -13,11 +13,13 @@
 
     <%# 中央：コメント表示欄 %>
     <div class='history_comment'>
-    <% if params[:shrine_id] %>
-      <h1 class="title"><span class='title_span'><%= @shrine.name %></span>のお祭り</h1>
-    <% elsif params[:temple_id] %>
-      <h1 class="title"><span class='title_span'><%= @temple.name %></span>のお祭り</h1>
-    <% end %>
+    <div class='title_name'>
+      <% if params[:shrine_id] %>
+        <h1 class="item_title"><span class='title_span'><%= @shrine.name %></span><span class='supplement'>の歴史</h1>
+      <% elsif params[:temple_id] %>
+        <h1 class="item_title"><span class='title_span'><%= @temple.name %></span><span class='supplement'>の歴史</h1>
+      <% end %>
+    </div>
     
       <div class='comments'>
       <% if params[:shrine_id] %>
