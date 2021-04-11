@@ -2,30 +2,32 @@
 
   <%# 左側：神社一覧情報 %>
   <div id= 'nav'>
-  <% if params[:shrine_id] %>
-  <h1>神社一覧</h1>
-  <%= render 'shrines/nav' %>
-  <% elsif params[:temple_id] %>
-  <h1>寺院一覧</h1>
-    <%= render 'temples/nav' %>
-  <% end %>
+    <% if params[:shrine_id] %>
+    <h1>神社一覧</h1>
+    <%= render 'shrines/nav' %>
+    <% elsif params[:temple_id] %>
+    <h1>寺院一覧</h1>
+      <%= render 'temples/nav' %>
+    <% end %>
   </div>
 
-    <%# 中央：コメント表示欄 %>
-    <div class='festival_comment'>
-    <% if params[:shrine_id] %>
-      <h1 class="title"><span class='title_span'><%= @shrine.name %></span>のお祭り</h1>
-    <% elsif params[:temple_id] %>
-      <h1 class="title"><span class='title_span'><%= @temple.name %></span>のお祭り</h1>
-    <% end %>
-    
-      <div class='comments'>
+  <%# 中央：コメント表示欄 %>
+  <div class='festival_comment'>
+    <div class='title_name'>
+      <% if params[:shrine_id] %>
+        <h1 class="item_title"><span class='title_span'><%= @shrine.name %></span><span class='supplement'>のお祭り</h1>
+      <% elsif params[:temple_id] %>
+        <h1 class="item_title"><span class='title_span'><%= @temple.name %></span><span class='supplement'>のお祭り</h1>
+      <% end %>
+    </div>
+
+    <div class='comments'>
       <% if params[:shrine_id] %>
         <%= render partial: 'shrineComments/festival', collection: @festivals %>
       <% elsif params[:temple_id] %>
         <%= render partial: 'templeComments/festival', collection: @festivals %>
       <% end %>
-      </div>
+    </div>
       <%= paginate @festivals %>
 
       <% if params[:shrine_id] %>
@@ -35,12 +37,13 @@
       <% end %>
     </div>
 
-  <%# 右側：神社説明欄 %>
-  <% if params[:shrine_id] %>
-  <%= render partial: 'shrineComments/festivalInfo' %>
-  <% elsif params[:temple_id] %>
-  <%= render partial: 'templeComments/festivalInfo' %>
-  <% end %>
+    <%# 右側：神社説明欄 %>
+    <% if params[:shrine_id] %>
+    <%= render partial: 'shrineComments/festivalInfo' %>
+    <% elsif params[:temple_id] %>
+    <%= render partial: 'templeComments/festivalInfo' %>
+    <% end %>
+  </div>
 </div>
 
 <script type="text/javascript" src="shrines/show"></script>

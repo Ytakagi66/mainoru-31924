@@ -19,15 +19,32 @@
   position: relative;
 }
 
-.temple_name {
-  height: 5vh;
+.title {
+  width: 85%;
   position: absolute;
+  display: flex;
+  justify-content: space-between;
   left: 0;
-  margin-left: 5vw;
-  font-size: 3rem;
-  color: brown;
-  letter-spacing: 15px;
-  font-family: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体';
-  margin-bottom: 20px;
-  padding-top: 15px;
+  margin-left: 100px;
+
+  .temple_name_title {
+    left: 0;
+    top: 50px;
+    font-size: 3rem;
+    color: brown;
+    letter-spacing: 15px;
+    font-family: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体';
+    margin-bottom: 20px;
+    padding-top: 15px;
+  }
+
+  .temple_edit {
+    margin-top: 50px;
+
+    .edit-btn {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+  
 }

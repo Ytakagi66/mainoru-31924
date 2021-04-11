@@ -2,12 +2,8 @@
   box-sizing: border-box;
 }
 
-:not(.homes_index) > .top-page-header {
+:not(.homes_index,.shrines_index, .temples_index) > .top-page-header {
   background-color: rgb(66, 61, 57);
-}
-
-.shrines_index > .top-page-header {
-  background-color: rgb(128, 128, 128, 0.2);
 }
 
 .top-page-header {

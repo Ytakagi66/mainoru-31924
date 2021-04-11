@@ -1,10 +1,11 @@
 class TemplesController < ApplicationController
+  before_action :set_temple, only: [:edit, :show, :update]
+
   def index
     @temples = Temple.all
   end
 
   def show
-    @temple = Temple.find(params[:id])
     @temples = Temple.all.limit(20).order(id: "DESC")
     @temple_json = @temple.to_json
     @festival = @temple.festivals.new
@@ -32,9 +33,24 @@ class TemplesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @temple.update(temple_params)
+      redirect_to temple_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def temple_params
     params.require(:temple).permit(:name, :info, :benefits_id, :address, :latitude, :longitude, images: []).merge(user_id: current_user.id)
   end  
+
+  def set_temple
+    @temple = Temple.find(params[:id])
+  end
 end

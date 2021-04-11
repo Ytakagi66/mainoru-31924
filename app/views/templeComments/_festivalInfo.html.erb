@@ -1,4 +1,4 @@
-  <div id= 'info' class= 'festival_info'>
+  <div id= 'info' class= 'infomation'>
       <table>
         <tr>
           <td class='name'><%= @temple.name %></td>
@@ -7,11 +7,11 @@
           <td colspan="2", class='temple_info'><%= @temple.info %></td>
         </tr>
         <tr>
-          <td>住所</td>
+          <td class='item_name'>住所</td>
           <td><%= @temple.address %></td>
         </tr>
         <tr>
-          <td>ご利益</td>
+          <td class='item_name'>ご利益</td>
           <td><%= @temple.benefits.name %></td>
         </tr>                 
       </table>

@@ -1,0 +1,80 @@
+<div class="shrines-sell-contents">
+  <header class="shrines-sell-header">
+    <%= link_to image_tag('mainoru-logo-color.png' , size: '185x50'), "/" %>
+
+  </header>
+  <div class="shrines-sell-main">
+    <h2 class="shrines-sell-title">神社の情報を入力</h2>
+    <%= form_with(model:@shrine, id: 'shrine-form', local: true) do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <%# 投稿画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        神社の画像
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <label class='image_update_label'>
+        <div id='image_preview'></div>
+        <div id="image-list">
+
+        </div> 
+        <div class = 'input_shrine'>
+          <%= f.file_field :image, multiple: true, name: 'shrine[images][]', id: 'shrine_image' %>
+          <span><i class="fas fa-camera"></i></span>
+        </div>
+      </div>
+    </label>
+    </div>
+
+    <%# 商品名と商品説明 %>
+    <div class="new-shrines">
+      <div class="weight-bold-text">
+        神社名
+      </div>
+    <%= f.text_area :name, class:"shrines-text", id:"shrine-name", placeholder:"神社名（必須 40文字まで)", maxlength:"40" %>
+
+      <div class="weight-bold-text">
+        神社の説明
+      </div>
+    <%= f.text_area :info, class:"shrines-text", id:"shrine-info", placeholder:"神社の説明（必須 1,000文字まで）（歴史、創建、文化財登録情報、自然など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+
+      <div class="weight-bold-text">
+        ご利益
+      </div>
+    <%= f.collection_select(:benefits_id, Benefits.all, :id, :name, {}, {class:"select-box", id:"shrine-benefits"}) %>
+
+    <%# 神社の住所 %>
+      <div class="weight-bold-text">
+        住所
+      </div>
+    <%= f.text_area :address, class:"shrines-text", id:"shrine-address", placeholder:"1-2-2" ,maxlength:"1000" %>
+    
+  </div>
+
+  <%# 下部ボタン %>
+  <div class="sell-btn-contents">
+    <%= f.submit "投稿する" ,class:"sell-btn" %>
+    <%=link_to 'もどる', root_path, class:"back-btn" %>
+  </div>
+</div>
+
+<% end %>
+<footer class="items-sell-footer">
+  <ul class="menu">
+    <li><a href="#">プライバシーポリシー</a></li>
+    <li><a href="#">フリマ利用規約</a></li>
+    <li><a href="#">特定商取引に関する表記</a></li>
+  </ul>
+  <%= link_to image_tag('mainoru-logo-color.png' , size: '185x50'), "/" %>
+  <p class="inc">
+    ©︎Mainoru,Inc.
+  </p>
+</footer>
+</div>
+
+<script src="https://maps.google.com/maps/api/js?v=3&key=AIzaSyDyadiU2YaDtGtxz6KHPYO_CHRG42Ji26g"></script>
