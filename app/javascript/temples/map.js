@@ -4,7 +4,7 @@
     temple = JSON.parse(document.getElementById('map').dataset.json);
     map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: temple.latitude, lng: temple.longitude},
-      zoom: 19,
+      zoom: 16.9,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       navigationControl: false
     });

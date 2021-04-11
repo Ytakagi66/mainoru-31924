@@ -3,23 +3,81 @@
 
   <%# ヘッダー %>
     <div class='top_header'>
+      <div class='back'>
+        <%= image_tag @user.backimage, class:'backimage' %>
+      </div>
 
       <%# プロフィール画像 %>
       <div class='icon'>
+        <%= image_tag @user.avatar, class:'avatar' %>
       </div>
     </div>
 
     <%# 自己紹介文 %>
     <div class='info'>
-      <%= @shrines.each do |shrine| %>
-      <% end %>
+      <div class='profile_info'>
+        <div class='prof_info'>
+          <div class='name'><%= @user.nickname%></div>
+          <div class='favorite'><span class="favorite_title">お気に入りの寺社仏閣</span><%= @user.favorite%></div>
+          自己紹介
+          <div class='self_info'><%= simple_format(@user.self_info) %></div>
+        </div>
+
+        <div class='profile_edit' >
+          <% if user_signed_in? %> 
+            <%# ログインしているユーザーの時のみ表示する　 %>
+            <% if current_user.id == @user.id %>
+              <%= link_to "アカウントの編集", edit_user_registration_path, method: :get, class: "user-update-btn" %>
+            <% end %> 
+          <% end %> 
+        </div>
+      </div>
     </div>
 
-    <%# これまで訪れた場所の地図 %>
-    <div class='map'>    
-      <div id="user_map"></div>
-    <div>
 
+
+    <%# これまで訪れた場所の地図 %>
+    <div class='map'>
+      <div class='map_title'>旅路の履歴</div>
+      <div id="user_map"></div>
+
+    <div class='posts'>
+      <div class='shrine'>
+      <h1>神社の履歴</h1>
+        <div class= 'content'>
+          <% @shrines.each do |shrine| %>
+            <div class='post'>
+              <%= link_to shrine_path(shrine.id), class:'link' do %>
+              <h1><%= shrine.name %></h1>
+              <% end %>
+              <p><%= shrine.address %></p>
+              <%= link_to shrine_path(shrine.id), class:'link' do %>
+              <p class='prof_image'><%= image_tag shrine.images.first %></p>
+              <% end %>
+              <p><%= simple_format(shrine.info) %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class='temple'>
+      <h1>寺院の履歴</h1>
+        <div class= 'content'>
+          <% @temples.each do |temple| %>
+            <div class='post'>
+              <%= link_to temple_path(temple.id), class:'link' do %>
+              <h1><%= temple.name %></h1>
+              <% end %>
+              <p><%= temple.address %></p>
+              <%= link_to temple_path(temple.id), class:'link' do %>
+              <p class='prof_image'><%= image_tag temple.images.first %></p>
+              <% end %>
+              <p><%= simple_format(temple.info) %></p>
+          <% end %>     
+        </div> 
+      </div>
+
+    </div>    
   </div>
 </div>
 
