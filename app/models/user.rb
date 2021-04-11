@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          has_many :shrines
-      
+         has_one_attached :avatar
+         has_one_attached :backimage
+
          extend ActiveHash::Associations::ActiveRecordExtensions
          belongs_to :prefecture
  

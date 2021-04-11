@@ -1,0 +1,162 @@
+.users_main {
+  width: 100vw;
+  min-height: 100vh;
+  height: 100%;
+
+  .profile {
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+  
+    // アイコンと背景画像
+    .top_header {
+      width: 100%;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      .back {
+        width: 100vw;
+        height: 300px;
+        background-size: cover;
+
+        .backimage {
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+        }
+      }
+
+      .icon {
+        width: 300px;
+        height: 300px;
+        border-radius: 200px;
+        margin: -150px 0 0 -70vw;
+        z-index: 10;
+
+        .avatar {
+          width: 300px;
+          height: 300px;
+          border-radius: 200px;
+        }
+      }
+    }
+
+    // 自己紹介
+    .info {
+      height: 300px;
+      width: 100%;
+      background-color: rgb(195, 196, 193);
+      position: relative;
+
+      .profile_info {
+        height: 350px;
+        width: 100%;
+        margin: 0 0 0 450px;
+        position: absolute;
+        display: flex;
+
+        .prof_info {
+          width: 750px;
+          height: calc(100% - 30px);
+          display: flex;
+          flex-direction: column;
+          margin: 20px 20px 10px 0;
+  
+          .name {
+            font-size: 20px;
+            margin-bottom: 20px;
+          }
+  
+          .favorite_title {
+            font-size: 15px;
+            padding-right: 10px;
+          }
+  
+          .favorite {
+            font-size: 20px;
+            margin-bottom: 20px;
+          }
+  
+          .self_info {
+            padding-left: 15px;
+          }
+        }
+  
+        .profile_edit {
+          width: 250px;
+          height: 200px;
+          position: relative;
+
+          .user-update-btn {
+            margin: 20px;
+            padding: 10px;
+            position: absolute;
+            text-decoration: none;
+            color: #000;
+            background-color: honeydew;
+            border-radius: 15px;
+          }
+        }
+      }
+    }
+
+    // 訪問した寺社仏閣のマッピング
+    .map {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(195, 196, 193);
+
+      .map_title {
+        font-size: 30px;
+        height: 50px;
+        padding-left: 50px;
+      }
+      #user_map {
+        height: calc(100vh - 50px);
+      }
+    }
+  }
+
+  // 投稿記事の一覧
+  .posts {
+    display: flex;
+
+    .shrine, .temple {
+      height: 100vh;
+      width: 50vw;
+      border: #000 1px solid;
+      padding: 15px;
+  
+      h1 {
+        font-size: 20px;
+      }
+
+      .content {
+        overflow: scroll;
+        height: calc(100vh - 50px);
+
+        .post {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 20px;
+          background-color: rgba(255, 255, 255, 0.534);
+    
+          .prof_image img{
+            width: 400px;
+            height: 300px;
+          }
+
+          .link {
+            text-decoration: none;
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+}

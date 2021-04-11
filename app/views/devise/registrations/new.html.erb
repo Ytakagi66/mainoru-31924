@@ -11,12 +11,40 @@
   <%= render 'shared/error_messages', model: f.object %>
 
   <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">ニックネーム</label>
+
+  <div class="img-upload">
+    <div class="weight-bold-text">
+      プロフィールアイコン
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) まいのる太郎", maxlength:"40" %>
+    <div class="click-upload">
+      <p>
+        クリックしてファイルをアップロード
+      </p>
+      <%= f.file_field :avatar, id:"avatar" %>
+    </div>
   </div>
+
+    <div class="img-upload">
+    <div class="weight-bold-text">
+      背景画像
+      <span class="indispensable">必須</span>
+    </div>
+    <div class="click-upload">
+      <p>
+        クリックしてファイルをアップロード
+      </p>
+      <%= f.file_field :backimage, id:"backimage" %>
+    </div>
+  </div>
+
+    <div class='form-group'>
+      <div class='form-text-wrap'>
+        <label class="form-text">ニックネーム</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"例) まいのる太郎", maxlength:"40" %>
+    </div>
 
   <div class="form-group">
     <div class='form-text-wrap'>

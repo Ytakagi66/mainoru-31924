@@ -1,0 +1,76 @@
+<% @shrines.each do |shrine| %>
+  <div class='post'>
+    <%= link_to shrine_path(shrine.id), class:'link' do %>
+    <h1><%= shrine.name %></h1>
+    <% end %>
+    <p><%= shrine.address %></p>
+    <%= link_to shrine_path(shrine.id), class:'link' do %>
+    <p class='prof_image'><%= image_tag shrine.images.first %></p>
+    <% end %>
+    <p><%= simple_format(shrine.info) %></p>
+  </div>
+<% end %>
+
+<% @shrineGoshuins.each do |shrineGoshuin| %>
+  <div class='post'>
+    <%= link_to shrine_path(shrineGoshuin.id), class:'link' do %>
+    <h1><%= shrineGoshuin.name %></h1>
+    <% end %>
+    <p><%= shrineGoshuin.address %></p>
+    <%= link_to shrine_path(shrineGoshuin.id), class:'link' do %>
+    <p class='prof_image'><%= image_tag shrineGoshuin.images.first %></p>
+    <% end %>
+    <p><%= simple_format(shrineGoshuin.info) %></p>
+  </div>
+<% end %>
+<% @shrineFestivals.each do |shrineFestival| %>
+  <div class='post'>
+    <%= link_to shrine_path(shrineFestival.id), class:'link' do %>
+    <h1><%= shrineFestival.name %></h1>
+    <% end %>
+    <p><%= shrineFestival.address %></p>
+    <%= link_to shrine_path(shrineFestival.id), class:'link' do %>
+    <p class='prof_image'><%= image_tag shrineFestival.images.first %></p>
+    <% end %>
+    <p><%= simple_format(shrineFestival.info) %></p>
+  </div>
+<% end %>
+
+<% @shrineBuilds.each do |shrineBuild| %>
+  <div class='post'>
+    <%= link_to shrine_path(shrineBuild.id), class:'link' do %>
+    <h1><%= shrineBuild.name %></h1>
+    <% end %>
+    <p><%= shrineBuild.address %></p>
+    <%= link_to shrine_path(shrineBuild.id), class:'link' do %>
+    <p class='prof_image'><%= image_tag shrineBuild.images.first %></p>
+    <% end %>
+    <p><%= simple_format(shrineBuild.info) %></p>
+  </div>
+<% end %>
+
+<% @shrineNatures.each do |shrineNature| %>
+  <div class='post'>
+    <%= link_to shrine_path(shrineNature.id), class:'link' do %>
+    <h1><%= shrineNature.name %></h1>
+    <% end %>
+    <p><%= shrineNature.address %></p>
+    <%= link_to shrine_path(shrineNature.id), class:'link' do %>
+    <p class='prof_image'><%= image_tag shrineNature.images.first %></p>
+    <% end %>
+    <p><%= simple_format(shrineNature.info) %></p>
+  </div>
+<% end %>
+
+<% @shrineHistories.each do |shrineHistory| %>
+  <div class='post'>
+    <%= link_to shrine_path(shrineHistory.id), class:'link' do %>
+    <h1><%= shrineHistory.name %></h1>
+    <% end %>
+    <p><%= shrineHistory.address %></p>
+    <%= link_to shrine_path(shrineHistory.id), class:'link' do %>
+    <p class='prof_image'><%= image_tag shrineHistory.images.first %></p>
+    <% end %>
+    <p><%= simple_format(shrineHistory.info) %></p>
+  </div>
+<% end %>

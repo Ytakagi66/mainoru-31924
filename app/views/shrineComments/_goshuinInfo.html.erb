@@ -4,7 +4,7 @@
           <td class='name'><%= @shrine.name %></td>
         </tr>      
         <tr>
-          <td colspan="2", class='shrine_info'><%= @shrine.info %></td>
+          <td colspan="2", class='shrine_info'><%= simple_format(@shrine.info) %></td>
         </tr>
         <tr>
           <td>住所</td>

@@ -5,7 +5,7 @@
     shrine = JSON.parse(document.getElementById('map').dataset.json);
     map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: shrine.latitude, lng: shrine.longitude},
-      zoom: 19,
+      zoom: 16.9,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       navigationControl: false
     });
