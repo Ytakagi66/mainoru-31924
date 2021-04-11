@@ -12,35 +12,46 @@
   <%= render 'shared/error_messages', model: f.object %>
 
   <div class="form-group">
-
-    <div class="img-upload">
-      <div class="weight-bold-text">
-        プロフィールアイコン
+    <div class= 'image_avatar'>
+      <div class="img-upload">
+        <div class="weight-bold-text">
+          プロフィールアイコン
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :avatar, id:"avatar" %>
+        </div>
       </div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :avatar, id:"avatar" %>
-      </div>
+      <div id="image-list-first"></div>
     </div>
+  </div>  
 
-    <div class="img-upload">
-      <div class="weight-bold-text">
-        背景画像
+  <div class="form-group">
+    <div class= 'image_avatar'>
+      <div class="img-upload">
+        <div class="weight-bold-text">
+          背景画像
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :backimage, id:"backimage" %>
+        </div>
       </div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :backimage, id:"backimage" %>
-      </div>
+      <div id="image-list-second"></div>
     </div>
+  </div>  
       
+  <div class='form-group'>
     <div class='form-text-wrap'>
       <label class="form-text">ニックネーム</label>
     </div>
-    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) まいのる太郎", maxlength:"40" %>
+    <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"例) まいのる太郎", maxlength:"40" %>
   </div>
 
   <div class="form-group">
@@ -114,11 +125,11 @@
   </div>
 
   <div class="form-group">
-  <div class='register-btn'>
-    <%= f.submit "更新" ,class:"register-red-btn" %>
+    <div class='register-btn'>
+      <%= f.submit "更新" ,class:"register-red-btn" %>
+    </div>
   </div>
-</div>
-</div>
 <% end %>
+</div>
 
 <%= render "shared/second-footer"%>
