@@ -26,7 +26,6 @@ class ShrinesController < ApplicationController
 
   def create
     @shrine = Shrine.new(shrine_params)
-    
       if @shrine.save
         redirect_to root_path
       elsif 
@@ -48,7 +47,7 @@ class ShrinesController < ApplicationController
   private
 
   def shrine_params
-    params.require(:shrine).permit(:name, :info, :benefits_id, :address, :latitude, :longitude, images: []).merge(user_id: current_user.id)
+    params.require(:shrine).permit(:name, :info, :benefits_id, :address, :latitude, :longitude, images:[]).merge(user_id: current_user.id)
   end
 
   def set_shrine

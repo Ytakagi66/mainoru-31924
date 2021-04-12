@@ -10,26 +10,26 @@
     <%= render 'shared/error_messages', model: f.object %>
 
     <%# 投稿画像 %>
-    <div class="img-upload">
-      <div class="weight-bold-text">
-        神社の画像
-      </div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <label class='image_update_label'>
-        <div id='image_preview'></div>
-        <div id="image-list">
-
-        </div> 
-        <div class = 'input_shrine'>
-          <%= f.file_field :image, multiple: true, name: 'shrine[images][]', id: 'shrine_image' %>
-          <span><i class="fas fa-camera"></i></span>
+    <div class="form-group">
+      <div class= 'image_avatar'>
+        <div class="img-upload">
+          <div class="weight-bold-text">
+            神社画像
+          </div>
+          <div class="click-upload">
+            <p>
+              クリックしてファイルをアップロード
+            </p>
+            <label>
+              <div class='shrine_input'>
+                <%= f.file_field :images, multiple: true, name: 'shrine[images][]', id: 'shrine_image' %>
+              </div>
+            </label>
+          </div>
         </div>
+        <div id="image-list-shrine"></div>
       </div>
-    </label>
-    </div>
+  </div>  
 
     <%# 商品名と商品説明 %>
     <div class="new-shrines">

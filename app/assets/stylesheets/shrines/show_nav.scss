@@ -1,5 +1,6 @@
 #nav {
-  width: 15%;
+  min-width: 15%;
+  width: 300px;
   height: 100%;
   background-color: gray;
   position: sticky;
@@ -32,5 +33,6 @@
 
   .shrine_link {
     text-decoration: none;
+    color: #fff;
   }    
 }

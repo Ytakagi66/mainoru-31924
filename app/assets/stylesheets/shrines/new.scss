@@ -1,4 +1,4 @@
-.temples-sell-contents {
+.shrines-sell-contents {
   background-color: #f5f5f5;
   font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
   font-size: 14px;
@@ -8,19 +8,19 @@
   width: 100vw;
 }
 
-.temples-sell-header {
+.shrines-sell-header {
   padding: 5vh 0;
   text-align: center;
 }
 
-.temples-sell-main {
+.shrines-sell-main {
   background-color: #FFF;
   width: 75vw;
   min-width: 450px;
   padding: 10vh 10vw;
 }
 
-.temples-sell-title {
+.shrines-sell-title {
   font-size: 22px;
   font-weight: bold;
   text-align: center;
@@ -70,98 +70,32 @@
 /* /共通 */
 
 /* 神社画像 */
-.img-upload {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 2vh 0;
+#shrine_image {
+  // display: none;
 }
 
-.click-upload {
-  margin: 15px 0;
-  min-width: 100%;
+.shrine_input {
+  // height: 100px;
+  // width: 300px;
+  // background-color: #000;
 }
 
-.click-upload>p {
-  margin-bottom: 15px;
-}
-
-.cls_image{
-  width: 198px;
-  height: 180px;
-}
-
-#image-list {
-  height: 180px;
-  background-color: rgb(205, 204, 206);
-  margin-left: 10px;
-}
-
-.image_preview{
-  display: flex;
-  width: 700px;
-}
-
-.image_update_label {
-  display: flex;
-  background-color: rgb(205, 204, 206);
-  height: 180px;
-}
-
-.preview_num_0 {
-  width: 25%;
-}
-
-.preview_num_1 {
-  width: 50%;
-}
-
-.preview_num_2 {
-  width: 75%;
-}
-
-.preview_num_3 {
-  width: 100%;
-}
-
-.image_num_0{
-  width: 0;
-}
-
-.image_num_1 {
-  width: 0;
-}
-
-.image_num_2 {
-  width: 0;
-}
-
-.image_num_3 {
-  width: 0;
-}
-
-#temple_image {
-  display: none;
-}
+  #profImage {
+    width: 200px;
+    height: 200px;
+  }
 
 .post_images {
   display: flex;
   justify-content: flex-start;
 }
 
-.input_temple {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
 /* 神社名と神社説明 */
-.new-temples {
+.new-shrines {
   padding: 2vh 0;
 }
 
-.temples-text {
+.shrines-text {
   width: 100%;
   padding: 6px 16px 6px;
   border-radius: 4px;
@@ -170,7 +104,7 @@
   resize: none;
 }
 
-.temples-explain {
+.shrines-explain {
   margin-top: 2vh;
 }
 
@@ -182,18 +116,18 @@
   align-items: center;
 }
 
-.temple_image_content {
+.shrine_image_content {
   display: none;
 }
 
 /* 神社の詳細など */
-.temples-detail {
+.shrines-detail {
   display: flex;
   justify-content: space-between;
   padding: 2vh 0;
 }
 
-.temples-detail>.form {
+.shrines-detail>.form {
   width: 600px;
   padding: 2vh 0;
 }
@@ -230,7 +164,7 @@
 
 /* /下部ボタン */
 
-.temples-sell-footer {
+.shrines-sell-footer {
   background-color: #f5f5f5;
   width: 60vw;
   padding: 3ch 0;
@@ -240,7 +174,7 @@
 }
 
 
-.temples-sell-footer>.menu {
+.shrines-sell-footer>.menu {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
