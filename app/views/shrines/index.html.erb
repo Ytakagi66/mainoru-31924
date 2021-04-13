@@ -7,6 +7,12 @@
         <h1>神社一覧</h1>
       </div>
       <div class='right_nav'>
+          <%= search_form_for @search, :class=>'search-form' do |f| %>
+            <%= f.search_field :name_cont, class: 'input-box' %>
+            <label class="search-icon">
+            <%= f.submit '検索', :class=>'search-button' %>
+            </label>
+          <% end %>    
         <%= link_to new_shrine_path, class:'shrine_link' do %>
         <h3>神社を紹介する</h3>
         <% end %>
@@ -14,6 +20,16 @@
     </div>
     <div id='shrine_contents'>
       <ul>
+      <% if request.url.match(/commit/)%>
+        <% @search_shrines.each do |search_shrine| %>
+          <%= link_to shrine_path(search_shrine.id), class:'shrine_link' do %>
+            <div class='content'>
+              <li class='name'><%= search_shrine.name %></li>
+              <li><%= image_tag search_shrine.images.first, class: 'first_image' %></li>
+            </div>
+          <% end %>
+        <% end %>
+      <% else %>
         <% @shrines.each do |shrine| %>
           <%= link_to shrine_path(shrine.id), class:'shrine_link' do %>
             <div class='content'>
@@ -22,6 +38,7 @@
             </div>
           <% end %>
         <% end %>
+      <% end %>
       </ul>
     </div>
   </div>
