@@ -3,6 +3,7 @@
   var marker;
   function initMap() {
     shrine = JSON.parse(document.getElementById('map').dataset.json);
+  
     map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: shrine.latitude, lng: shrine.longitude},
       zoom: 16.9,

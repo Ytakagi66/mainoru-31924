@@ -17,7 +17,7 @@
 }
 
 .footer-content-head {
-  font-size: 18px;
+  font-size: 21px;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -35,4 +35,14 @@
 
 .footer>p {
   font-size: 14px;
+}
+
+ul {
+  display: flex;
+}
+
+.footer-link {
+  margin: 15px;
+  font-size: 20px;
+  text-decoration: none;
 }

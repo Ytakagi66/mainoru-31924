@@ -1,5 +1,6 @@
 class TemplesController < ApplicationController
   before_action :set_temple, only: [:edit, :show, :update]
+  before_action :set_search
 
   def index
     @temples = Temple.all
@@ -42,6 +43,11 @@ class TemplesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def set_search
+    @search = Temple.ransack(params[:q]) #ransackの検索メソッド
+    @search_temples = @search.result(distinct: true).order(created_at: "DESC").includes(:user)
   end
 
   private

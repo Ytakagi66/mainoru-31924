@@ -1,5 +1,6 @@
 class ShrinesController < ApplicationController
   before_action :set_shrine, only: [:edit, :show, :update]
+  before_action :set_search
 
   def index
     @shrines = Shrine.all
@@ -26,7 +27,6 @@ class ShrinesController < ApplicationController
 
   def create
     @shrine = Shrine.new(shrine_params)
-    
       if @shrine.save
         redirect_to root_path
       elsif 
@@ -45,10 +45,15 @@ class ShrinesController < ApplicationController
     end
   end
 
+  def set_search
+    @search = Shrine.ransack(params[:q]) #ransackの検索メソッド
+    @search_shrines = @search.result(distinct: true).order(created_at: "DESC").includes(:user)
+  end
+
   private
 
   def shrine_params
-    params.require(:shrine).permit(:name, :info, :benefits_id, :address, :latitude, :longitude, images: []).merge(user_id: current_user.id)
+    params.require(:shrine).permit(:name, :info, :benefits_id, :address, :latitude, :longitude, images:[]).merge(user_id: current_user.id)
   end
 
   def set_shrine
