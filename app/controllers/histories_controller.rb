@@ -1,4 +1,6 @@
 class HistoriesController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     if params[:shrine_id]
       @shrine = Shrine.find(params[:shrine_id])
