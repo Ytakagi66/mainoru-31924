@@ -6,12 +6,12 @@ class FestivalsController < ApplicationController
       @shrine = Shrine.find(params[:shrine_id])
       @shrines = Shrine.all
       @festival = @shrine.festivals.new
-      @festivals = @shrine.festivals.all.page(params[:page]).per(10)
+      @festivals = @shrine.festivals.all.page(params[:page]).per(10).order(id: "DESC")
     else
       @temple = Temple.find(params[:temple_id])
       @temples = Temple.all
       @festival = @temple.festivals.new
-      @festivals = @temple.festivals.all.page(params[:page]).per(10)
+      @festivals = @temple.festivals.all.page(params[:page]).per(10).order(id: "DESC")
     end
   end
 
@@ -27,7 +27,7 @@ class FestivalsController < ApplicationController
     if params[:shrine_id]
       @shrine = Shrine.find(params[:shrine_id])
       if @shrine.festivals.create(shrine_params)
-        redirect_to "/shrines/#{@shrine.id}"
+        redirect_to "/shrines/#{@shrine.id}/festivals"
       else
         @festivals = @shrine.festivals.includes(:user)
         render :show
@@ -35,7 +35,7 @@ class FestivalsController < ApplicationController
     else
       @temple = Temple.find(params[:temple_id])
       if @temple.festivals.create(temple_params)
-        redirect_to "/temples/#{@temple.id}"
+        redirect_to "/temples/#{@temple.id}/festivals"
       else
         @festivals = @temple.festivals.includes(:user)
         render :show

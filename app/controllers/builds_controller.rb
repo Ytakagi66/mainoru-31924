@@ -6,12 +6,12 @@ class BuildsController < ApplicationController
       @shrine = Shrine.find(params[:shrine_id])
       @shrines = Shrine.all
       @build = @shrine.builds.new
-      @builds = @shrine.builds.all.page(params[:page]).per(10)
+      @builds = @shrine.builds.all.page(params[:page]).per(10).order(id: "DESC")
     else
       @temple = Temple.find(params[:temple_id])
       @temples = Temple.all
       @build = @temple.builds.new
-      @builds = @temple.builds.all.page(params[:page]).per(10)
+      @builds = @temple.builds.all.page(params[:page]).per(10).order(id: "DESC")
     end
   end
 
@@ -27,7 +27,7 @@ class BuildsController < ApplicationController
     if params[:shrine_id]
       @shrine = Shrine.find(params[:shrine_id])
       if @shrine.builds.create(shrine_params)
-        redirect_to "/shrines/#{@shrine.id}"
+        redirect_to "/shrines/#{@shrine.id}/builds"
       else
         @builds = @shrine.builds.includes(:user)
         render :show
@@ -35,7 +35,7 @@ class BuildsController < ApplicationController
     else
       @temple = Temple.find(params[:temple_id])
       if @temple.builds.create(temple_params)
-        redirect_to "/temples/#{@temple.id}"
+        redirect_to "/temples/#{@temple.id}/builds"
       else
         @builds = @temple.builds.includes(:user)
         render :show

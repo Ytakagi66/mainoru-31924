@@ -6,12 +6,12 @@ class NaturesController < ApplicationController
       @shrine = Shrine.find(params[:shrine_id])
       @shrines = Shrine.all
       @nature = @shrine.natures.new
-      @natures = @shrine.natures.all.page(params[:page]).per(10)
+      @natures = @shrine.natures.all.page(params[:page]).per(10).order(id: "DESC")
     else
       @temple = Temple.find(params[:temple_id])
       @temples = Temple.all
       @nature = @temple.natures.new
-      @natures = @temple.natures.all.page(params[:page]).per(10)
+      @natures = @temple.natures.all.page(params[:page]).per(10).order(id: "DESC")
     end
   end
 
@@ -27,7 +27,7 @@ class NaturesController < ApplicationController
     if params[:shrine_id]
       @shrine = Shrine.find(params[:shrine_id])
       if @shrine.natures.create(shrine_params)
-        redirect_to "/shrines/#{@shrine.id}"
+        redirect_to "/shrines/#{@shrine.id}/natures"
       else
         @natures = @shrine.natures.includes(:user)
         render :show
@@ -35,7 +35,7 @@ class NaturesController < ApplicationController
     else
       @temple = Temple.find(params[:temple_id])
       if @temple.natures.create(temple_params)
-        redirect_to "/temples/#{@temple.id}"
+        redirect_to "/temples/#{@temple.id}/natures"
       else
         @natures = @temple.natures.includes(:user)
         render :show

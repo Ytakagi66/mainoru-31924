@@ -1,9 +1,10 @@
 <div class="comment_preview">
+  <div class='comment_title'><%= festival.title %></div>
+  
   <div class = "comment_image">
   
     <div class="comment-image comment">
       <!-- 投稿したメッセージ内容を記述する -->
-      <div class='title'><%= festival.title %></div>
       <%= link_to festival.image, 'data-lightbox': @festival.image do %>
       <%= image_tag festival.image.variant(resize: '600x600'), class: 'comment-image' if festival.image.attached? %>
       <% end %>

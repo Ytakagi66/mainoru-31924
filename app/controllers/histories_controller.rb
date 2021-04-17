@@ -6,12 +6,12 @@ class HistoriesController < ApplicationController
       @shrine = Shrine.find(params[:shrine_id])
       @shrines = Shrine.all
       @history = @shrine.histories.new
-      @histories = @shrine.histories.all.page(params[:page]).per(10)
+      @histories = @shrine.histories.all.page(params[:page]).per(10).order(id: "DESC")
     else
       @temple = Temple.find(params[:temple_id])
       @temples = Temple.all
       @history = @temple.histories.new
-      @histories = @temple.histories.all.page(params[:page]).per(10)
+      @histories = @temple.histories.all.page(params[:page]).per(10).order(id: "DESC")
     end
   end
 
@@ -27,7 +27,7 @@ class HistoriesController < ApplicationController
     if params[:shrine_id]
       @shrine = Shrine.find(params[:shrine_id])
       if @shrine.histories.create(shrine_params)
-        redirect_to "/shrines/#{@shrine.id}"
+        redirect_to "/shrines/#{@shrine.id}/histories"
       else
         @histories = @shrine.histories.includes(:user)
         render :show
@@ -35,7 +35,7 @@ class HistoriesController < ApplicationController
     else
       @temple = Temple.find(params[:temple_id])
       if @temple.histories.create(temple_params)
-        redirect_to "/temples/#{@temple.id}"
+        redirect_to "/temples/#{@temple.id}/histories"
       else
         @histories = @temple.histories.includes(:user)
         render :show

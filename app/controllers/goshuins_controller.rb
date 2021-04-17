@@ -6,12 +6,12 @@ class GoshuinsController < ApplicationController
       @shrine = Shrine.find(params[:shrine_id])
       @shrines = Shrine.all
       @goshuin = @shrine.goshuins.new
-      @goshuins = @shrine.goshuins.all.page(params[:page]).per(10)
+      @goshuins = @shrine.goshuins.all.page(params[:page]).per(10).order(id: "DESC")
     else
       @temple = Temple.find(params[:temple_id])
       @temples = Temple.all
       @goshuin = @temple.goshuins.new
-      @goshuins = @temple.goshuins.all.page(params[:page]).per(10)
+      @goshuins = @temple.goshuins.all.page(params[:page]).per(10).order(id: "DESC")
     end
   end
 
@@ -27,7 +27,7 @@ class GoshuinsController < ApplicationController
     if params[:shrine_id]
       @shrine = Shrine.find(params[:shrine_id])
       if @shrine.goshuins.create(shrine_params)
-        redirect_to "/shrines/#{@shrine.id}"
+        redirect_to "/shrines/#{@shrine.id}/goshuins"
       else
         @goshuins = @shrine.goshuins.includes(:user)
         render :show
@@ -35,7 +35,7 @@ class GoshuinsController < ApplicationController
     else
       @temple = Temple.find(params[:temple_id])
       if @temple.goshuins.create(temple_params)
-        redirect_to "/temples/#{@temple.id}"
+        redirect_to "/temples/#{@temple.id}/goshuins"
       else
         @goshuins = @temple.goshuins.includes(:user)
         render :show

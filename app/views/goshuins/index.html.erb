@@ -21,7 +21,7 @@
       <% end %>
     </div>
     
-      <div class='comments'>
+    <div class='comments'>
       <% if params[:shrine_id] %>
         <%= render partial: 'shrineComments/goshuin', collection: @goshuins %>
       <% elsif params[:temple_id] %>
