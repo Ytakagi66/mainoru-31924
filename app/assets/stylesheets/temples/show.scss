@@ -40,12 +40,15 @@
   }
 
   .temple_edit {
-    margin-top: 50px;
-    width: 200px;
+    margin-top: 40px;
+    width: 250px;
 
     .edit-btn {
       text-decoration: none;
-      color: #000;
+      color: #fff;
+      padding: 20px;
+      background-color: gray;
+      border-radius: 15px;
     }
   }
   

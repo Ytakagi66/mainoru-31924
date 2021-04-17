@@ -21,16 +21,37 @@
         <%= @shrine.name %>
         <% end %>
         </span>
-        <span class='supplement'>の御朱印</h1>
+        <span class='supplement'>の歴史</h1>
       <% elsif params[:temple_id] %>
         <h1 class="item_title">
         <span class='title_span'>
         <%= link_to temple_path(@temple.id), class:'link' do %>
-        <%= @temple.name %></span><span class='supplement'>の御朱印</h1>
+        <%= @temple.name %>
         <% end %>
+        </span><span class='supplement'>の歴史</h1>
       <% end %>
     </div>
     
+    <div class='another_select'>
+    <% if params[:shrine_id] %>
+      <ul>
+        <li class='select'><%= link_to shrine_festivals_path(@shrine.id), class: 'select_link' do %>祭・神事<% end %></li>
+        <li class='select'><%= link_to shrine_goshuins_path(@shrine.id), class: 'select_link' do %>御朱印<% end %></li>
+        <li class='select'><%= link_to shrine_builds_path(@shrine.id), class: 'select_link' do %>建築物<% end %></li>
+        <li class='select'><%= link_to shrine_natures_path(@shrine.id), class: 'select_link' do %>自然・景色<% end %></li>
+        <li class='select'><%= link_to shrine_histories_path(@shrine.id), class: 'select_link now' do %>歴史<% end %></li>
+      </ul>
+    <% elsif params[:temple_id] %>
+      <ul>
+        <li class='select'><%= link_to temple_festivals_path(@temple.id), class: 'select_link' do %>祭・神事<% end %></li>
+        <li class='select'><%= link_to temple_goshuins_path(@temple.id), class: 'select_link' do %>御朱印<% end %></li>
+        <li class='select'><%= link_to temple_builds_path(@temple.id), class: 'select_link' do %>建築物<% end %></li>
+        <li class='select'><%= link_to temple_natures_path(@temple.id), class: 'select_link' do %>自然・景色<% end %></li>
+        <li class='select'><%= link_to temple_histories_path(@temple.id), class: 'select_link now' do %>歴史<% end %></li>
+      </ul>    
+    <% end %>
+    </div>
+
       <div class='comments'>
       <% if params[:shrine_id] %>
         <%= render partial: 'shrineComments/history', collection: @histories %>
