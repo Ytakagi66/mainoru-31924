@@ -11,7 +11,7 @@
 }
 
 .show_main {
-  width: 85%;
+  width: 75%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -19,14 +19,15 @@
   position: relative;
 
   .title {
-    width: 85%;
+    width: 90%;
     position: absolute;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     left: 0;
     
   
     .shrine_name {
+      width: 100vw;
       left: 0;
       top: 50px;
       font-size: 3rem;
@@ -39,6 +40,8 @@
   
     .shrine_edit {
       margin-top: 50px;
+      width: 200px;
+      right: 0;
   
       .edit-btn {
         text-decoration: none;

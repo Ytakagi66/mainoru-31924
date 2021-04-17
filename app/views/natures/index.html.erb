@@ -15,9 +15,19 @@
     <div class='nature_comment'>
     <div class='title_name'>
       <% if params[:shrine_id] %>
-        <h1 class="item_title"><span class='title_span'><%= @shrine.name %></span><span class='supplement'>の自然</h1>
+        <h1 class="item_title">
+        <span class='title_span'>
+        <%= link_to shrine_path(@shrine.id), class:'link' do %>
+        <%= @shrine.name %>
+        <% end %>
+        </span>
+        <span class='supplement'>の御朱印</h1>
       <% elsif params[:temple_id] %>
-        <h1 class="item_title"><span class='title_span'><%= @temple.name %></span><span class='supplement'>の自然</h1>
+        <h1 class="item_title">
+        <span class='title_span'>
+        <%= link_to temple_path(@temple.id), class:'link' do %>
+        <%= @temple.name %></span><span class='supplement'>の御朱印</h1>
+        <% end %>
       <% end %>
     </div>
     

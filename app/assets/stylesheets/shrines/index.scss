@@ -130,7 +130,7 @@
   
         .first_image {
           height: 250px;
-          width: 295px;
+          width: 290px;
           bottom: 0;
           border-radius: 10%;
         }
@@ -139,10 +139,11 @@
           padding: auto;
           height: 30px;
           font-family: '源界明朝';
-          font-size: 25px;
-          color: #EB6101;
+          font-size: 20px;
+          color: brown;
           display: flex;
           justify-content: center;
+          align-items: center;
         }
       }
     }
