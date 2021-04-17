@@ -13,8 +13,10 @@
             <%= f.submit '検索', :class=>'search-button' %>
             </label>
           <% end %>    
+        <% if user_signed_in? %>
         <%= link_to new_shrine_path, class:'shrine_link' do %>
         <h3>神社を紹介する</h3>
+        <% end %>
         <% end %>
       </div>
     </div>

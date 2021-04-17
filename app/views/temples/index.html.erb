@@ -12,9 +12,11 @@
           <label class="search-icon">
           <%= f.submit '検索', :class=>'search-button' %>
           </label>
-        <% end %>         
-        <%= link_to new_temple_path, class:'temple_link' do %>
-        <h3>お寺を紹介する</h3>
+        <% end %>
+        <% if user_signed_in? %>  
+          <%= link_to new_temple_path, class:'temple_link' do %>
+          <h3>お寺を紹介する</h3>
+          <% end %>
         <% end %>
       </div>
     </div>

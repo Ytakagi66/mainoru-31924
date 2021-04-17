@@ -11,7 +11,9 @@
       </div>
 
       <div class = 'shrine_edit'>
-        <%= link_to "神社情報の編集", edit_shrine_path, method: :get, class: "edit-btn" %>
+        <% if user_signed_in? %>
+          <%= link_to "神社情報の編集", edit_shrine_path, method: :get, class: "edit-btn" %>
+        <% end %>
       </div>
     </div>
 
