@@ -128,6 +128,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-decoration: none;
   
         .first_image {
           height: 250px;
@@ -140,11 +141,15 @@
           padding: auto;
           height: 25px;
           font-family: '源界明朝';
-          font-size: 25px;
+          font-size: 20px;
           color: brown;
           display: flex;
           justify-content: center;
           align-items: center;
+        }
+
+        .shrine_link {
+          text-decoration: none;
         }
       }
     }

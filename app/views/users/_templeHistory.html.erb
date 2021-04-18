@@ -1,77 +1,12 @@
-<% @temples.each do |temple| %>
+<% @templesArray.each do |templesArray| %>
   <div class='post'>
-    <%= link_to temple_path(temple.id), class:'link' do %>
-    <h1><%= temple.name %></h1>
+    <%= link_to temple_path(templesArray.id), class:'link' do %>
+    <h1><%= templesArray.name %></h1>
     <% end %>
-    <p><%= temple.address %></p>
-    <%= link_to temple_path(temple.id), class:'link' do %>
-    <p class='prof_image'><%= image_tag temple.images.first %></p>
+    <p><%= templesArray.address %></p>
+    <%= link_to temple_path(templesArray.id), class:'link' do %>
+    <p class='prof_image'><%= image_tag templesArray.images.first %></p>
     <% end %>
-    <p><%= simple_format(temple.info) %></p>
-  </div>
-<% end %>
-
-<% @templeGoshuins.each do |templeGoshuin| %>
-  <div class='post'>
-    <%= link_to temple_path(templeGoshuin.id), class:'link' do %>
-    <h1><%= templeGoshuin.name %></h1>
-    <% end %>
-    <p><%= templeGoshuin.address %></p>
-    <%= link_to temple_path(templeGoshuin.id), class:'link' do %>
-    <p class='prof_image'><%= image_tag templeGoshuin.images.first %></p>
-    <% end %>
-    <p><%= simple_format(templeGoshuin.info) %></p>
-  </div>
-<% end %>
-
-<% @templeFestivals.each do |templeFestival| %>
-  <div class='post'>
-    <%= link_to temple_path(templeFestival.id), class:'link' do %>
-    <h1><%= templeFestival.name %></h1>
-    <% end %>
-    <p><%= templeFestival.address %></p>
-    <%= link_to temple_path(templeFestival.id), class:'link' do %>
-    <p class='prof_image'><%= image_tag templeFestival.images.first %></p>
-    <% end %>
-    <p><%= simple_format(templeFestival.info) %></p>
-  </div>
-<% end %>
-
-<% @templeBuilds.each do |templeBuild| %>
-  <div class='post'>
-    <%= link_to temple_path(templeBuild.id), class:'link' do %>
-    <h1><%= templeBuild.name %></h1>
-    <% end %>
-    <p><%= templeBuild.address %></p>
-    <%= link_to temple_path(templeBuild.id), class:'link' do %>
-    <p class='prof_image'><%= image_tag templeBuild.images.first %></p>
-    <% end %>
-    <p><%= simple_format(templeBuild.info) %></p>
-  </div>
-<% end %>
-
-<% @templeNatures.each do |templeNature| %>
-  <div class='post'>
-    <%= link_to temple_path(templeNature.id), class:'link' do %>
-    <h1><%= templeNature.name %></h1>
-    <% end %>
-    <p><%= templeNature.address %></p>
-    <%= link_to temple_path(templeNature.id), class:'link' do %>
-    <p class='prof_image'><%= image_tag templeNature.images.first %></p>
-    <% end %>
-    <p><%= simple_format(templeNature.info) %></p>
-  </div>
-<% end %>
-
-<% @templeHistories.each do |templeHistory| %>
-  <div class='post'>
-    <%= link_to temple_path(templeHistory.id), class:'link' do %>
-    <h1><%= templeHistory.name %></h1>
-    <% end %>
-    <p><%= templeHistory.address %></p>
-    <%= link_to temple_path(templeHistory.id), class:'link' do %>
-    <p class='prof_image'><%= image_tag templeHistory.images.first %></p>
-    <% end %>
-    <p><%= simple_format(templeHistory.info) %></p>
+    <p><%= simple_format(templesArray.info) %></p>
   </div>
 <% end %>

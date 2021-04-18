@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def show
     @user = User.find(params[:id])
     @shrines = Shrine.where(user_id: @user.id).page(params[:page]).per(10)
@@ -15,6 +16,10 @@ class UsersController < ApplicationController
     gon.temple_history = temple_history
     gon.temple_build = temple_build
     gon.temple_nature = temple_nature
+    @shrinesArray = @shrines + @shrineFestivals + @shrineGoshuins + @shrineHistories + @shrineNatures + @shrineBuilds
+    @shrinesArray.uniq!
+    @templesArray = @temples + @templeFestivals + @templeGoshuins + @templeHistories + @templeNatures + @templeBuilds
+    @templesArray.uniq!
   end
 
   def edit
@@ -103,7 +108,7 @@ class UsersController < ApplicationController
     @festivals.map{|festivals|
       @festivals_num = festivals.temple_id
     }
-    @templeFestivals = Temple.where(id: @festivals_num)
+    @templeFestivals = Temple.where(id: @festivals_num).distinct
   end
 
   def temple_goshuin
@@ -115,7 +120,7 @@ class UsersController < ApplicationController
     @goshuins.map{|goshuins|
       @goshuins_num = goshuins.temple_id
     }
-    @templeGoshuins = Temple.where(id: @goshuins_num)
+    @templeGoshuins = Temple.where(id: @goshuins_num).distinct
   end
 
   def temple_history
@@ -127,7 +132,7 @@ class UsersController < ApplicationController
     @histories.map{|histories|
       @histories_num = histories.temple_id
     }
-    @templeHistories = Temple.where(id: @histories_num)
+    @templeHistories = Temple.where(id: @histories_num).distinct
   end
 
   def temple_build
@@ -139,7 +144,7 @@ class UsersController < ApplicationController
     @builds.map{|builds|
       @builds_num = builds.temple_id
     }
-    @templeBuilds = Temple.where(id: @builds_num)
+    @templeBuilds = Temple.where(id: @builds_num).distinct
   end
 
   def temple_nature
@@ -151,7 +156,7 @@ class UsersController < ApplicationController
     @natures.map{|natures|
       @natures_num = natures.temple_id
     }
-    @templeNatures = Temple.where(id: @natures_num)
+    @templeNatures = Temple.where(id: @natures_num).distinct
   end
 end
 
