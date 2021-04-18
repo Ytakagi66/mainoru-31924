@@ -1,25 +1,26 @@
 class ShrinesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit]
   before_action :set_shrine, only: [:edit, :show, :update]
-  before_action :set_search
+  before_action :set_search, only: :index
 
   def index
-    @shrines = Shrine.all
+    @shrines = Shrine.all.order(id: "DESC")
   end
 
+  # 各テーブルに投稿されたカラムを投稿した日時が最新のものから順に表示する
   def show
     @shrines = Shrine.all.limit(20).order(id: "DESC")
     @shrine_json = @shrine.to_json
     @festival = @shrine.festivals.new
-    @festivals = @shrine.festivals.all.limit(10).order(id: "DESC")
+    @festivals = @shrine.festivals.all.limit(5).order(id: "DESC")
     @goshuin = @shrine.goshuins.new
-    @goshuins = @shrine.goshuins.all.limit(10).order(id: "DESC")
+    @goshuins = @shrine.goshuins.all.limit(5).order(id: "DESC")
     @build = @shrine.builds.new
-    @builds = @shrine.builds.all.limit(10).order(id: "DESC")
+    @builds = @shrine.builds.all.limit(5).order(id: "DESC")
     @nature = @shrine.natures.new
-    @natures = @shrine.natures.all.limit(10).order(id: "DESC")
+    @natures = @shrine.natures.all.limit(5).order(id: "DESC")
     @history = @shrine.histories.new
-    @histories = @shrine.histories.all.limit(10).order(id: "DESC")
+    @histories = @shrine.histories.all.limit(5).order(id: "DESC")
   end
 
   def new
@@ -29,7 +30,7 @@ class ShrinesController < ApplicationController
   def create
     @shrine = Shrine.new(shrine_params)
       if @shrine.save
-        redirect_to root_path
+        redirect_to shrines_path
       elsif 
         render :new
       end
@@ -46,6 +47,7 @@ class ShrinesController < ApplicationController
     end
   end
 
+  # 検索機能のメソッド
   def set_search
     @search = Shrine.ransack(params[:q]) #ransackの検索メソッド
     @search_shrines = @search.result(distinct: true).order(created_at: "DESC").includes(:user)

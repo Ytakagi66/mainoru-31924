@@ -12,5 +12,5 @@ class User < ApplicationRecord
          belongs_to :prefecture
  
         validates :prefecture_id, numericality: { other_than: 0 } 
-
+        validates :self_info, length: { maximum: 400 }
 end

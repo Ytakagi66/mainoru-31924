@@ -108,7 +108,7 @@
   
       ul {
         display: flex;
-        justify-content:space-between;
+        justify-content: left;
         flex-wrap:wrap;
       }
   
@@ -134,9 +134,8 @@
         .name {
           padding: auto;
           height: 25px;
-          font-family: '源界明朝';
-          font-size: 25px;
-          color: brown;
+          font-size: 20px;
+          color: #000;
           display: flex;
           justify-content: center;
           align-items: center;

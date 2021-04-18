@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
 
   def show
     @user = User.find(params[:id])
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
       redirect_to user_path(current_user)
     else
-      render :edit
+      redirect_to edit_user_path(current_user)
     end
   end
 
@@ -157,6 +158,6 @@ class UsersController < ApplicationController
       @natures_num = natures.temple_id
     }
     @templeNatures = Temple.where(id: @natures_num).distinct
-  end
+  end  
 end
 

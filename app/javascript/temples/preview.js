@@ -4,6 +4,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
     const ImagePreview = document.getElementById('image_preview');
     ImagePreview.setAttribute('style','display:flex;');
     const InputShrine = document.getElementById('input_temple');
+    if (!ImageList){ return false;}
 
     const createImageHTML = (blob) => {
        // 画像を表示するためのdiv要素を生成
