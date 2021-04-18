@@ -33,6 +33,8 @@ Things you may want to cover:
 # URL
 
 # テスト用アカウント
+- メールアドレス：test@test.com
+- パスワード: a12345
 
 # 利用方法
 - ログインを行います。未登録の場合は新規登録を行ってください。
