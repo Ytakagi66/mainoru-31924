@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: mainoru_31924_production
-  username: mainoru_31924
-  password: <%= ENV['MAINORU_31924_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
