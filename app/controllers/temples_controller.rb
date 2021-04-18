@@ -30,7 +30,7 @@ class TemplesController < ApplicationController
   def create
     @temple = Temple.new(temple_params)
     if @temple.save
-      redirect_to temple_path
+      redirect_to temples_path
     else
       render :new
     end
