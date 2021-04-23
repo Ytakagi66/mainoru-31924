@@ -24,25 +24,26 @@
       <ul>
       <% if request.url.match(/commit/)%>
         <% @search_shrines.each do |search_shrine| %>
-            <div class='content'>
+            <li class='content'>
             <%= link_to shrine_path(search_shrine.id), class:'shrine_link' do %>
-              <li class='name'><%= search_shrine.name %></li>
+              <div class='name'><%= search_shrine.name %></div>
             <% end %>
             <%= link_to shrine_path(search_shrine.id), class:'shrine_link' do %>
-              <li><%= image_tag search_shrine.images.first, class: 'first_image' %></li>
+              <div><%= image_tag search_shrine.images.first, class: 'first_image' %></div>
             <% end %>
             </div>
+          <li>
         <% end %>
       <% else %>
         <% @shrines.each do |shrine| %>
-            <div class='content'>
+            <li class='content'>
             <%= link_to shrine_path(shrine.id), class:'shrine_link' do %>
-              <li class='name'><%= shrine.name %></li>
+              <div class='name'><%= shrine.name %></div>
             <% end %>
             <%= link_to shrine_path(shrine.id), class:'shrine_link' do %>
-              <li><%= image_tag shrine.images.first, class: 'first_image' %></li>
+              <div><%= image_tag shrine.images.first, class: 'first_image' %></div>
             <% end %>
-            </div>
+            </li>
         <% end %>
       <% end %>
       </ul>

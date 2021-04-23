@@ -111,12 +111,10 @@
         justify-content: left;
         flex-wrap:wrap;
       }
-  
-      li {
-        height: 250px;
-      }
-  
+    
       .content {
+        height: 275px;
+        width: 290px;
         margin: 15px 30px;
         background-color: rgb(211, 209, 209);
         border-radius: 10%;

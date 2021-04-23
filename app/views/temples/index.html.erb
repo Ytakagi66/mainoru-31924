@@ -25,19 +25,19 @@
         <% if request.url.match(/commit/)%>
           <% @search_temples.each do |search_temple| %>
             <%= link_to temple_path(search_temple.id), class:'temple_link' do %>
-              <div class='content'>
-                <li class='name'><%= search_temple.name %></li>
-                <li><%= image_tag search_temple.images.first, class: 'first_image' %></li>
-              </div>
+              <li class='content'>
+                <div class='name'><%= search_temple.name %></div>
+                <div><%= image_tag search_temple.images.first, class: 'first_image' %></div>
+              </li>
             <% end %>
           <% end %>
         <% else %>      
         <% @temples.each do |temple| %>
         <%= link_to temple_path(temple.id), class:'temple_link' do %>
-          <div class='content'>
-            <li class='name'><%= temple.name %></li>
-            <li><%= image_tag temple.images.first, class: 'first_image' %></li>
-          </div>
+          <li class='content'>
+            <div class='name'><%= temple.name %></div>
+            <div><%= image_tag temple.images.first, class: 'first_image' %></div>
+          </li>
         <% end %>
         <% end %>
         <% end %>
