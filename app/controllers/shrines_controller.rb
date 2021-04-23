@@ -1,7 +1,8 @@
 class ShrinesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit]
-  before_action :set_shrine, only: [:edit, :show, :update]
+  before_action :set_shrine, only: [:edit, :show, :update, :destroy]
   before_action :set_search, only: :index
+  before_action :redirect_shrine, only: [:destroy]
 
   def index
     @shrines = Shrine.all.order(id: "DESC")
@@ -47,6 +48,11 @@ class ShrinesController < ApplicationController
     end
   end
 
+  def destroy
+    @shrine.destroy
+    redirect_to root_path
+  end
+
   # 検索機能のメソッド
   def set_search
     @search = Shrine.ransack(params[:q]) #ransackの検索メソッド
@@ -62,4 +68,9 @@ class ShrinesController < ApplicationController
   def set_shrine
     @shrine = Shrine.find(params[:id])
   end
+
+  def redirect_shrine
+    redirect_to root_path unless current_user.id == @shrine.user.id
+  end
+
 end

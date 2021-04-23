@@ -4,6 +4,7 @@
 
   </header>
   <div class="shrines-sell-main">
+
     <h2 class="shrines-sell-title">神社の情報を入力</h2>
     <%= form_with(model:@shrine, id: 'shrine-form', local: true) do |f| %>
 
@@ -64,12 +65,7 @@
 </div>
 
 <% end %>
-<footer class="items-sell-footer">
-  <ul class="menu">
-    <li><a href="#">プライバシーポリシー</a></li>
-    <li><a href="#">フリマ利用規約</a></li>
-    <li><a href="#">特定商取引に関する表記</a></li>
-  </ul>
+<footer class="shrines-sell-footer">
   <%= link_to image_tag('mainoru-logo-color.png' , size: '185x50'), "/" %>
   <p class="inc">
     ©︎Mainoru,Inc.

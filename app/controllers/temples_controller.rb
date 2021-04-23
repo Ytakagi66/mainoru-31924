@@ -1,7 +1,8 @@
 class TemplesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit]
-  before_action :set_temple, only: [:edit, :show, :update]
+  before_action :set_temple, only: [:edit, :show, :update, :destroy]
   before_action :set_search, only: :index
+  before_action :redirect_temple, only: [:destroy]
 
   def index
     @temples = Temple.all.order(id: "DESC")
@@ -47,6 +48,11 @@ class TemplesController < ApplicationController
     end
   end
 
+  def destroy
+    @temple.destroy
+    redirect_to root_path
+  end
+
   # 検索機能のメソッド
   def set_search
     @search = Temple.ransack(params[:q]) #ransackの検索メソッド
@@ -61,5 +67,9 @@ class TemplesController < ApplicationController
 
   def set_temple
     @temple = Temple.find(params[:id])
+  end
+
+  def redirect_temple
+    redirect_to root_path unless current_user.id == @temple.user.id
   end
 end

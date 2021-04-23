@@ -11,7 +11,10 @@
       </div>
       <div class = 'temple_edit'>
       <% if user_signed_in? %>
-        <%= link_to "寺院情報の編集", edit_temple_path, method: :get, class: "edit-btn" %>
+        <%= link_to "編集", edit_temple_path, method: :get, class: "edit-btn" %>
+        <% if current_user.id == @temple.user.id %>
+          <%= link_to "削除", temple_path(@temple.id), method: :delete, class: "edit-btn" %>
+        <% end %>
       <% end %>
       </div>    
     </div>
