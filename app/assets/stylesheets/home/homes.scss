@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: saddlebrown;
 }
 
 .top_header {
@@ -52,7 +51,6 @@
   padding: 30px;
   width: 100vw;
   height: 100%;
-  background-color: salmon;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -90,15 +88,23 @@
   height: 100%;
 }
 
-.how_to {
+#how_to {
   width: 100vw;
-  background: url("../../images/空.gif") repeat;
+  background: url("../../../../public/空.gif") repeat;
   animation: fall 10s infinite linear;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   padding-top: 100px;
   position: relative;
+}
+
+@keyframes fall {
+  0% {
+    background-position: 0 0;
+  }100% {
+    background-position: -700px 700px;
+  }
 }
 
 .how_to_header {
