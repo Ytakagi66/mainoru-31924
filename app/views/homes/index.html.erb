@@ -9,6 +9,7 @@
   </div>
 </div>
 
+<%# サイト概要を記述する %>
 <div class = 'contents'>
 
   <%# ページの特徴 %>
@@ -26,7 +27,9 @@
   </div>
   
   <%# まいのるでできる事 %>
-  <div class = 'how_to'>
+  <%# リンクをクリックする事で神社のページへ移動できる様にする
+    hoverで色を少し薄くなる様にする %>
+  <div id = 'how_to'>
     <div class = 'how_to_header'>
       <h1>まいのるで出来ること</h1>
     </div>
@@ -40,6 +43,8 @@
       <% end %>
     </div>
 
+    <%# リンクをクリックする事でお寺のページへ移動できる様にする
+    hoverで色を少し薄くなる様にする %>
     <div class = 'second_content', id = 'second_photo'>
     <%= link_to temples_path do %>
       <p class = >日本中のお寺を探しに行こう</p>

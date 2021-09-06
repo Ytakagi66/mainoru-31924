@@ -1,15 +1,6 @@
 <div class= "build_main">
 
-  <%# 左側：神社一覧情報 %>
-  <div id= 'nav'>
-  <% if params[:shrine_id] %>
-  <h1>神社一覧</h1>
-    <%= render 'shrines/nav' %>
-  <% elsif params[:temple_id] %>
-  <h1>寺院一覧</h1>
-    <%= render 'temples/nav' %>
-  <% end %>
-  </div>
+
 
     <%# 中央：コメント表示欄 %>
     <div class='build_comment'>

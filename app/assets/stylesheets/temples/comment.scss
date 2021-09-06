@@ -59,11 +59,20 @@
     padding: 20px;
     flex-direction: column;
     overflow: scroll;
-  }  
+  }
+
+  .comment-link {
+    margin-top: 20px;
+  }
+
+  .temple_comments {
+    height: 100%;
+    display: block;
+  }
 
   .comments {
     height: 300px;
-    width: 100%;
+    width: 80%;
     border: rgb(206, 206, 206) solid 1px;
     display: flex;
   
@@ -87,7 +96,6 @@
     .comment_text {
       width: 70%;
       margin: 20px 40px;
-
     }
   }  
 }
@@ -145,21 +153,24 @@
 #second {
     top: 0px;
     left: 1660px;
+    width: 100%;
 }
 
 #third {
     top: 0px;
-    left: 2815px;
+    left: 3015px;
+    width: 100%;
 }
 
 #four {
     top: 0px;
-    left: 4000px;
+    left: 4300px;
+    width: 100%;
 }
 
 #five {
   top: 0px;
-  left: 5200px;
+  left: 5700px;
 }
 
 #slide {
@@ -169,15 +180,15 @@
 }
 
 .move-to-second {
-    transform: translateX(-1670px);
-    -moz-transform: translateX(-1670px);
-    -webkit-transform: translateX(-1670px);
+    transform: translateX(-1660px);
+    -moz-transform: translateX(-1660px);
+    -webkit-transform: translateX(-1660px);
 }
 
 .move-to-third {
-    transform: translateX(-2815px);
-    -moz-transform: translateX(-2815px);
-    -webkit-transform: translateX(-2815px);
+    transform: translateX(-3015px);
+    -moz-transform: translateX(-3015px);
+    -webkit-transform: translateX(-3015px);
 }
 
 .move-to-first {
@@ -187,13 +198,13 @@
 }
 
 .move-to-four {
-    transform: translateX(-4000px);
-    -moz-transform: translateX(-4000px);
-    -webkit-transform: translateX(-4000px);    
+    transform: translateX(-4300px);
+    -moz-transform: translateX(-4300px);
+    -webkit-transform: translateX(-4300px);    
 }
 
 .move-to-five {
-  transform: translateX(-5200px);
-  -moz-transform: translateX(-5200px);
-  -webkit-transform: translateX(-5200px);    
+  transform: translateX(-5700px);
+  -moz-transform: translateX(-5700px);
+  -webkit-transform: translateX(-5700px);    
 }

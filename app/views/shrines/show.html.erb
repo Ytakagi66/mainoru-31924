@@ -1,9 +1,4 @@
 <div class = 'shrine_show'>
-  <div id= 'nav'>
-  <h1>最近投稿された神社</h1>
-    <%= link_to '神社一覧ページへ戻る', shrines_path, class:'page_list' %>
-    <%= render 'nav' %>
-  </div>
   <div class = 'show_main'>
     <div class = 'title'>
       <div class = 'shrine_name'>
@@ -11,11 +6,9 @@
       </div>
 
       <div class = 'shrine_edit'>
-        <% if user_signed_in? %>
+        <% if current_user.id == @shrine.user.id || current_user.id == 2 %>
           <%= link_to "編集", edit_shrine_path, method: :get, class: "edit-btn" %>
-          <% if current_user.id == @shrine.user.id %>
           <%= link_to "削除", shrine_path(@shrine.id), method: :delete, class: "edit-btn" %>
-          <% end %>
         <% end %>
       </div>
     </div>
@@ -27,17 +20,13 @@
     </div>
 
     <%# 神社情報の表示 %>
+    <%# 神社についての説明文とご利益を記載する %>
     <div class = 'show_info'>
       <div class = 'guide'>
-      <h1>神社について</h1>
+      <h1><%= @shrine.name %>について</h1>
         <table>
           <tr>
-            <%# <td class = 'info'>説明</td> %>
             <td colspan="2", class='shrine_info'><%= @shrine.info %></td>
-          </tr>
-          <tr>
-            <td>住所</td>
-            <td><%= @shrine.address %></td>
           </tr>
           <tr>
             <td>ご利益</td>
@@ -67,7 +56,14 @@
                 <div class="shrine_comment_content">
                   <h4>コメント一覧</h4>
                   <%= render partial: 'festival', collection: @festivals %>
-                  <%= link_to "もっと見る", "/shrines/#{@shrine.id}/festivals" %>
+                  <%# コメントが投稿されている場合は「もっと見る」を表示、投稿されていない場合は「コメントを投稿するを表示する」 %>
+                  <div class = "comment-link">
+                    <% if @festivals.empty? %>
+                      <%= link_to "コメントを投稿する", "/shrines/#{@shrine.id}/festivals" %>
+                    <% else %>
+                      <%= link_to "もっと見る", "/shrines/#{@shrine.id}/festivals" %>
+                    <% end %>
+                  </div>
                 </div>
             </div>
           </div>
@@ -78,7 +74,14 @@
                 <div class="shrine_comment_content">
                   <h4>コメント一覧</h4>
                   <%= render partial: 'goshuin', collection: @goshuins %>
-                  <%= link_to "もっと見る", "/shrines/#{@shrine.id}/goshuins" %>
+                  <%# コメントが投稿されている場合は「もっと見る」を表示、投稿されていない場合は「コメントを投稿するを表示する」 %>
+                  <div class = "comment-link">
+                    <% if @goshuins.empty? %>
+                      <%= link_to "コメントを投稿する", "/shrines/#{@shrine.id}/goshuins" %>
+                    <% else %>
+                      <%= link_to "もっと見る", "/shrines/#{@shrine.id}/goshuins" %>
+                    <% end %>
+                  </div>
                 </div>
             </div>
           </div>
@@ -89,7 +92,14 @@
                 <div class="shrine_comment_content">
                   <h4>コメント一覧</h4>
                   <%= render partial: 'build', collection: @builds %>
-                  <%= link_to "もっと見る", "/shrines/#{@shrine.id}/builds" %>
+                  <%# コメントが投稿されている場合は「もっと見る」を表示、投稿されていない場合は「コメントを投稿するを表示する」 %>
+                  <div class = "comment-link">
+                    <% if @builds.empty? %>
+                      <%= link_to "コメントを投稿する", "/shrines/#{@shrine.id}/builds" %>
+                    <% else %>
+                      <%= link_to "もっと見る", "/shrines/#{@shrine.id}/builds" %>
+                    <% end %>
+                  </div>
                 </div>
             </div>
           </div>
@@ -100,7 +110,14 @@
                 <div class="shrine_comment_content">
                   <h4>コメント一覧</h4>
                   <%= render partial: 'nature', collection: @natures %>
-                  <%= link_to "もっと見る", "/shrines/#{@shrine.id}/natures" %>
+                  <%# コメントが投稿されている場合は「もっと見る」を表示、投稿されていない場合は「コメントを投稿するを表示する」 %>
+                  <div class = "comment-link">
+                    <% if @natures.empty? %>
+                      <%= link_to "コメントを投稿する", "/shrines/#{@shrine.id}/natures" %>
+                    <% else %>
+                      <%= link_to "もっと見る", "/shrines/#{@shrine.id}/natures" %>
+                    <% end %>
+                  </div>
                 </div>
             </div>
           </div>
@@ -111,7 +128,14 @@
                 <div class="shrine_comment_content">
                   <h4>コメント一覧</h4>
                   <%= render partial: 'history', collection: @histories %>
-                  <%= link_to "もっと見る", "/shrines/#{@shrine.id}/histories" %>
+                  <%# コメントが投稿されている場合は「もっと見る」を表示、投稿されていない場合は「コメントを投稿するを表示する」 %>
+                  <div class = "comment-link">
+                    <% if @histories.empty? %>
+                      <%= link_to "コメントを投稿する", "/shrines/#{@shrine.id}/histories" %>
+                    <% else %>
+                      <%= link_to "もっと見る", "/shrines/#{@shrine.id}/histories" %>
+                    <% end %>
+                  </div>
                 </div>
             </div>
           </div>
