@@ -91,6 +91,11 @@
       display: flex;
       flex-direction: column;
 
+      .form-text,.form-comment {
+        margin-bottom: 20px;
+        padding: 3%;
+      }
+
       .top_row {
         display: flex;
       }    
@@ -98,6 +103,10 @@
       .Lower_row {
         display: flex;
         justify-content: space-between;
+
+        .form-submit {
+          width: 100px;
+        }
       }
     }
   }

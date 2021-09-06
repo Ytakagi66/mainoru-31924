@@ -8,6 +8,11 @@
   display: flex;
   background-color: rgb(232, 232, 233);
 
+  #nav {
+    width: 20%;
+    height: 100%;
+  }
+
   .title_name {
     width: 100%;
     height: 60px;
@@ -86,6 +91,11 @@
       display: flex;
       flex-direction: column;
 
+      .form-text,.form-comment {
+        margin-bottom: 20px;
+        padding: 3%;
+      }
+
       .top_row {
         display: flex;
       }    
@@ -93,6 +103,10 @@
       .Lower_row {
         display: flex;
         justify-content: space-between;
+
+        .form-submit {
+          width: 100px;
+        }
       }
     }
   }
@@ -130,7 +144,6 @@
 
     td {
       padding: 15px 0;
-      width: 100%;
     }    
   }
 
@@ -139,45 +152,47 @@
     height: 100%;
     border: #000 1px solid;
     box-shadow: 6px 6px rgb(136, 132, 132); 
+    background-color: #fff;
     position: sticky;
     top: 111.25;
     margin: 20px;
-    padding: 20px;
-
+    padding: 20px;  
+  
     th {
       display: block;
     }
-
+  
     td {
       display: block;
       padding: 0 0 20px 0 ;
     }
-
+  
     .address {
       padding-top: 0;
     }
-  }  
+  }
+  
 
   // ページネーションの設定
-  .pagination {
-    padding: 30px 0;
-  }
 
   .pagination{
     margin: auto;
-    width: 50%;
+    width: 95%;
     display: flex;
     justify-content: flex-start;
+    padding: 30px 0;
   }
   .pagination span{
-    background-color: rgba(158, 158, 158, 0.4);
+    background-color: #fff;
     text-align: center;
-    width: 50px;
+    width: 70px;
     border: solid 1px #344963;
-    color: rgb(197, 20, 159);
+    color: #000;
     transition: .3s;
     -webkit-transform: scale(1);
     transform: scale(1);
+    text-decoration: none;
+    padding: 5px;
   }
   .pagination span:hover{
     transition: .3s;
