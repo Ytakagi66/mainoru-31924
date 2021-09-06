@@ -92,7 +92,8 @@
 
 .how_to {
   width: 100vw;
-  background-color: rgb(153, 204, 238);
+  background: url("../../images/空.gif") repeat;
+  animation: fall 10s infinite linear;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
