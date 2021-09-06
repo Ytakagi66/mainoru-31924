@@ -90,7 +90,8 @@
 
 #how_to {
   width: 100vw;
-  background: url("../../../../public/空.gif") repeat;
+  background: image-url("sky.gif") repeat;
+  background-size: cover;
   animation: fall 10s infinite linear;
   display: flex;
   flex-direction: column;
@@ -99,13 +100,14 @@
   position: relative;
 }
 
-@keyframes fall {
-  0% {
-    background-position: 0 0;
-  }100% {
-    background-position: -700px 700px;
-  }
-}
+
+ @keyframes fall {
+   0% {
+     background-position: 0 0;
+   }100% {
+     background-position: 0 0;
+   }
+ }
 
 .how_to_header {
   position: absolute;
