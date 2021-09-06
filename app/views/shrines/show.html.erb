@@ -1,9 +1,4 @@
 <div class = 'shrine_show'>
-  <div id= 'nav'>
-  <h1>最近投稿された神社</h1>
-    <%= link_to '神社一覧ページへ戻る', shrines_path, class:'page_list' %>
-    <%= render 'nav' %>
-  </div>
   <div class = 'show_main'>
     <div class = 'title'>
       <div class = 'shrine_name'>
@@ -11,11 +6,9 @@
       </div>
 
       <div class = 'shrine_edit'>
-        <% if user_signed_in? %>
+        <% if current_user.id == @shrine.user.id || current_user.id == 2 %>
           <%= link_to "編集", edit_shrine_path, method: :get, class: "edit-btn" %>
-          <% if current_user.id == @shrine.user.id %>
           <%= link_to "削除", shrine_path(@shrine.id), method: :delete, class: "edit-btn" %>
-          <% end %>
         <% end %>
       </div>
     </div>

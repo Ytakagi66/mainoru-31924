@@ -1,20 +1,13 @@
 <div class = 'temple_show'>
-  <div id= 'nav'>
-  <h1>最近投稿された寺院</h1>
-    <%= link_to '寺院一覧ページへ戻る', temples_path, class:'page_list' %>
-    <%= render 'temples/nav' %>    
-  </div>
   <div class = 'show_main'>
     <div class='title'>
       <div class = 'temple_name_title'>
         <%= @temple.name %>
       </div>
       <div class = 'temple_edit'>
-      <% if user_signed_in? %>
+      <% if current_user.id == @temple.user.id || current_user.id == 2 %>
         <%= link_to "編集", edit_temple_path, method: :get, class: "edit-btn" %>
-        <% if current_user.id == @temple.user.id %>
-          <%= link_to "削除", temple_path(@temple.id), method: :delete, class: "edit-btn" %>
-        <% end %>
+        <%= link_to "削除", temple_path(@temple.id), method: :delete, class: "edit-btn" %>
       <% end %>
       </div>    
     </div>
