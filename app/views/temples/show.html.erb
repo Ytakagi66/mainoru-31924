@@ -25,6 +25,7 @@
     </div>
 
     <%# 寺院情報の表示 %>
+    <%# お寺についての説明文とご利益を記載する %>
     <div class = 'show_info'>
       <div class = 'guide'>
       <h1>寺院について</h1>
@@ -34,11 +35,7 @@
             <td colspan="2", class='temple_info'><%= @temple.info %></td>
           </tr>
           <tr>
-            <td>住所</td>
-            <td><%= @temple.address %></td>
-          </tr>
-          <tr>
-            <td>ご利益</td>
+            <th>ご利益</th>
             <td><%= @temple.benefits.name %></td>
           </tr>                 
         </table>
@@ -65,7 +62,14 @@
                 <div class="temple_comment_content">
                   <h4>コメント一覧</h4>
                   <%= render partial: 'festival', collection: @festivals %>
-                  <%= link_to "もっと見る", "/temples/#{@temple.id}/festivals" %>
+                  <%# コメントが投稿されている場合は「もっと見る」を表示、投稿されていない場合は「コメントを投稿するを表示する」 %>
+                  <div class = "comment-link">
+                    <% if @festivals.empty? %>
+                    <%= link_to "コメントを投稿する", "/temples/#{@temple.id}/festivals" %>
+                    <% else %>
+                    <%= link_to "もっと見る", "/temples/#{@temple.id}/festivals" %>
+                    <% end %>
+                  </div>
                 </div>
             </div>
           </div>
@@ -76,18 +80,32 @@
                 <div class="temple_comment_content">
                   <h4>コメント一覧</h4>
                   <%= render partial: 'goshuin', collection: @goshuins %>
-                  <%= link_to "もっと見る", "/temples/#{@temple.id}/goshuins" %>
+                  <%# コメントが投稿されている場合は「もっと見る」を表示、投稿されていない場合は「コメントを投稿するを表示する」 %>
+                  <div class = "comment-link">
+                    <% if @goshuins.empty? %>
+                    <%= link_to "コメントを投稿する", "/temples/#{@temple.id}/goshuins" %>
+                    <% else %>
+                    <%= link_to "もっと見る", "/temples/#{@temple.id}/goshuins" %>
+                    <% end %>
+                  </div>
                 </div>
             </div>
           </div>
 
           <div id="third" class="box">
-          <%# 寺院の祭りのコメント欄（top10） %>
+          <%# 寺院の建築物のコメント欄（top10） %>
             <div class = 'temple_comments'>
                 <div class="temple_comment_content">
                   <h4>コメント一覧</h4>
                   <%= render partial: 'build', collection: @builds %>
-                  <%= link_to "もっと見る", "/temples/#{@temple.id}/builds" %>
+                  <%# コメントが投稿されている場合は「もっと見る」を表示、投稿されていない場合は「コメントを投稿するを表示する」 %>
+                  <div class = "comment-link">
+                    <% if @builds.empty? %>
+                    <%= link_to "コメントを投稿する", "/temples/#{@temple.id}/builds" %>
+                    <% else %>
+                    <%= link_to "もっと見る", "/temples/#{@temple.id}/builds" %>
+                    <% end %>
+                  </div>
                 </div>
             </div>
           </div>
@@ -98,7 +116,14 @@
                 <div class="temple_comment_content">
                   <h4>コメント一覧</h4>
                   <%= render partial: 'nature', collection: @natures %>
-                  <%= link_to "もっと見る", "/temples/#{@temple.id}/natures" %>
+                  <%# コメントが投稿されている場合は「もっと見る」を表示、投稿されていない場合は「コメントを投稿するを表示する」 %>
+                  <div class = "comment-link">
+                    <% if @natures.empty? %>
+                      <%= link_to "コメントを投稿する", "/temples/#{@temple.id}/natures" %>
+                    <% else %>
+                      <%= link_to "もっと見る", "/temples/#{@temple.id}/natures" %>
+                    <% end %>
+                  </div>
                 </div>
             </div>
           </div>
@@ -109,7 +134,14 @@
                 <div class="temple_comment_content">
                   <h4>コメント一覧</h4>
                   <%= render partial: 'history', collection: @histories %>
-                  <%= link_to "もっと見る", "/temples/#{@temple.id}/histories" %>
+                  <%# コメントが投稿されている場合は「もっと見る」を表示、投稿されていない場合は「コメントを投稿するを表示する」 %>
+                  <div class = "comment-link">
+                    <% if @histories.empty? %>
+                      <%= link_to "コメントを投稿する", "/temples/#{@temple.id}/histories" %>
+                    <% else %>
+                      <%= link_to "もっと見る", "/temples/#{@temple.id}/histories" %>
+                    <% end %>
+                  </div>
                 </div>
             </div>
           </div>
