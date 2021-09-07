@@ -4,6 +4,7 @@
       <div class = 'temple_name_title'>
         <%= @temple.name %>
       </div>
+      
       <div class = 'temple_edit'>
       <% if current_user.id == @temple.user.id %>
         <%= link_to "編集", edit_temple_path, method: :get, class: "edit-btn" %>
