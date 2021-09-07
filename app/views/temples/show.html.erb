@@ -6,7 +6,7 @@
       </div>
       
       <div class = 'temple_edit'>
-      <% if current_user.id == @temple.user.id %>
+      <% if user_signed_in? && current_user.id == @temple.user.id %>
         <%= link_to "編集", edit_temple_path, method: :get, class: "edit-btn" %>
         <%= link_to "削除", temple_path(@temple.id), method: :delete, class: "edit-btn" %>
       <% end %>
