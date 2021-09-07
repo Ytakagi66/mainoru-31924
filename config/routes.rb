@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "homes#index"
-  resources :users, only: [:edit, :update, :delete]
+  resources :users, only: [:show, :edit, :update, :delete]
 
   resources :shrines do
     resources :comments, only: [:create, :show, :index]

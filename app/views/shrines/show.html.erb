@@ -6,7 +6,7 @@
       </div>
 
       <div class = 'shrine_edit'>
-        <% if current_user.id == @shrine.user.id %>
+        <% if user_signed_in? && current_user.id == @shrine.user.id %>
           <%= link_to "編集", edit_shrine_path, method: :get, class: "edit-btn" %>
           <%= link_to "削除", shrine_path(@shrine.id), method: :delete, class: "edit-btn" %>
         <% end %>
